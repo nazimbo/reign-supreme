@@ -75,7 +75,7 @@
     "id": 9,
     "name": "Mobutu Sese Seko",
     "country": "Zaire",
-    "years": 32,
+    "years": 31,
     "photo": "/leaders/9.jpg",
     "factEn": "He renamed the country Zaire, changed his own name, and mandated citizens abandon European names — all to promote 'authenticity.'",
     "factFr": "Il rebaptisa le pays Zaïre, changea son propre nom et imposa aux citoyens d'abandonner les noms européens — pour promouvoir 'l'authenticité'."
@@ -192,7 +192,7 @@
     "id": 22,
     "name": "Vladimir Putin",
     "country": "Russia",
-    "years": 24,
+    "years": 26,
     "photo": "/leaders/22.jpg",
     "factEn": "Before entering politics, he was a KGB intelligence officer stationed in Dresden, East Germany, for five years.",
     "factFr": "Avant d'entrer en politique, il était officier du KGB basé à Dresde, en Allemagne de l'Est, pendant cinq ans."
@@ -201,7 +201,7 @@
     "id": 23,
     "name": "Paul Biya",
     "country": "Cameroon",
-    "years": 41,
+    "years": 43,
     "photo": "/leaders/23.jpg",
     "factEn": "He is famous for spending months at a time in a five-star Swiss hotel, earning him the nickname 'the absentee president.'",
     "factFr": "Il est célèbre pour passer des mois dans un hôtel cinq étoiles suisse, lui valant le surnom de 'président absent'."
@@ -210,7 +210,7 @@
     "id": 24,
     "name": "Teodoro Obiang",
     "country": "Equatorial Guinea",
-    "years": 44,
+    "years": 46,
     "photo": "/leaders/24.jpg",
     "factEn": "He seized power in 1979 by overthrowing and executing his own uncle, Francisco Macías Nguema.",
     "factFr": "Il prit le pouvoir en 1979 en renversant et faisant exécuter son propre oncle, Francisco Macías Nguema."
@@ -219,7 +219,7 @@
     "id": 25,
     "name": "Ali Khamenei",
     "country": "Iran",
-    "years": 34,
+    "years": 36,
     "photo": "/leaders/25.jpg",
     "factEn": "He lost partial use of his right hand in 1981 after a bomb explosion at a speech and has used only his left hand since.",
     "factFr": "Il perdit partiellement l'usage de sa main droite en 1981 lors d'une explosion de bombe pendant un discours et n'utilise plus que sa main gauche depuis."
@@ -420,7 +420,7 @@
     "years": 34,
     "photo": "/leaders/47.jpg",
     "factEn": "Born a minor German princess, she engineered a palace coup to depose her own husband Tsar Peter III and seize the Russian throne.",
-    "factFr": "Née princesse allemande de rang modeste, elle orchestra un coup de palais pour déposer son mari le tsar Pierre III et s'emparer du trône de Russie."
+    "factFr": "Né princesse allemande de rang modeste, elle orchestra un coup de palais pour déposer son mari le tsar Pierre III et s'emparer du trône de Russie."
   },
   {
     "id": 48,
@@ -444,7 +444,7 @@
     "id": 50,
     "name": "Kim Jong-un",
     "country": "North Korea",
-    "years": 12,
+    "years": 14,
     "photo": "/leaders/50.jpg",
     "factEn": "He reportedly attended school in Bern, Switzerland, under a false identity as the son of a North Korean embassy employee.",
     "factFr": "Il aurait fréquenté une école à Berne, en Suisse, sous une fausse identité en tant que fils d'un employé de l'ambassade nord-coréenne."
@@ -498,7 +498,7 @@
     "id": 56,
     "name": "Bashar al-Assad",
     "country": "Syria",
-    "years": 24,
+    "years": 25,
     "photo": "/leaders/56.jpg",
     "factEn": "He trained as an ophthalmologist in London and was not expected to rule — he only came to power after his elder brother's death in a car crash.",
     "factFr": "Il se forma comme ophtalmologiste à Londres et n'était pas destiné à gouverner — il n'accéda au pouvoir qu'après la mort de son frère aîné dans un accident de voiture."
@@ -543,7 +543,7 @@
     "id": 61,
     "name": "A. Lukashenko",
     "country": "Belarus",
-    "years": 30,
+    "years": 31,
     "photo": "/leaders/61.jpg",
     "factEn": "He was the only member of the Belarusian parliament to vote against the dissolution of the Soviet Union in 1991.",
     "factFr": "Il fut le seul membre du parlement biélorusse à voter contre la dissolution de l'Union soviétique en 1991."
@@ -552,7 +552,7 @@
     "id": 62,
     "name": "Recep T. Erdogan",
     "country": "Turkey",
-    "years": 21,
+    "years": 23,
     "photo": "/leaders/62.jpg",
     "factEn": "He was jailed for four months in 1999 for reciting a poem deemed too religious — an imprisonment that launched his national political career.",
     "factFr": "Il fut emprisonné quatre mois en 1999 pour avoir récité un poème jugé trop religieux — une incarcération qui lança sa carrière politique nationale."
@@ -579,7 +579,7 @@
     "id": 65,
     "name": "Justin Trudeau",
     "country": "Canada",
-    "years": 9,
+    "years": 10,
     "photo": "/leaders/65.jpg",
     "factEn": "Before entering politics, he was a drama teacher and substitute teacher at a Vancouver secondary school.",
     "factFr": "Avant d'entrer en politique, il était professeur de théâtre et enseignant suppléant dans un lycée de Vancouver."
@@ -615,7 +615,7 @@
     "id": 69,
     "name": "Emmanuel Macron",
     "country": "France",
-    "years": 7,
+    "years": 8,
     "photo": "/leaders/69.jpg",
     "factEn": "At 39, he became the youngest French president ever elected and had never held elected office before his victory.",
     "factFr": "À 39 ans, il devint le plus jeune président français jamais élu et n'avait jamais exercé de fonction élective avant sa victoire."
