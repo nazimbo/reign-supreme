@@ -15,6 +15,7 @@ export const translations = {
     menuSubtitle: 'Who ruled the longest?',
     menuHowTo: 'A leader is shown on the left with their reign duration. Guess whether the challenger on the right ruled for longer or shorter.',
     play: 'Play',
+    funFact: 'Fun Fact',
   },
   fr: {
     score: 'Score',
@@ -32,5 +33,6 @@ export const translations = {
     menuSubtitle: 'Qui a régné le plus longtemps\u00a0?',
     menuHowTo: 'Un dirigeant est affiché à gauche avec la durée de son règne. Devinez si le challenger à droite a régné plus longtemps ou moins longtemps.',
     play: 'Jouer',
+    funFact: 'Le saviez-vous\u00a0?',
   },
 };

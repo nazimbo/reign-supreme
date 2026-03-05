@@ -53,6 +53,7 @@ export default function App() {
   // 'menu' | 'playing' | 'revealing' | 'correct' | 'gameover'
   const [gameState, setGameState] = useState('menu');
   const [flashColor, setFlashColor] = useState(null);
+  const [photoErrors, setPhotoErrors] = useState({});
 
   const getUniqueRandomLeader = (currentPlayedIds, excludeId = null) => {
     let available = initialLeadersData.filter(l => !currentPlayedIds.includes(l.id) && l.id !== excludeId);
@@ -89,6 +90,7 @@ export default function App() {
         setGameState('correct');
         setFlashColor('bg-green-500/30');
         setScore(s => s + 1);
+        const correctDuration = rightLeader.factEn ? 2000 : 1200;
         setTimeout(() => {
           const newRightLeader = getUniqueRandomLeader(playedIds, rightLeader.id);
           setPlayedIds(prev => [...prev, newRightLeader.id]);
@@ -96,7 +98,7 @@ export default function App() {
           setRightLeader(newRightLeader);
           setGameState('playing');
           setFlashColor(null);
-        }, 1200);
+        }, correctDuration);
       } else {
         setGameState('gameover');
         setFlashColor('bg-red-500/40');
@@ -122,6 +124,9 @@ export default function App() {
     </>
   );
 
+  const hasLeftPhoto = !!(leftLeader && leftLeader.photo && !photoErrors[leftLeader.id]);
+  const hasRightPhoto = !!(rightLeader && rightLeader.photo && !photoErrors[rightLeader.id]);
+
   return (
     <div className="h-[100dvh] w-full flex flex-col md:flex-row relative font-sans overflow-hidden bg-black text-white selection:bg-transparent">
       <style dangerouslySetInnerHTML={{__html: `
@@ -131,6 +136,11 @@ export default function App() {
         }
         .vs-badge { animation: pulse-soft 3s infinite ease-in-out; }
         .glass-panel { background: rgba(0, 0, 0, 0.3); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        @keyframes fact-reveal {
+          from { opacity: 0; transform: translateY(8px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+        .fact-reveal { animation: fact-reveal 0.4s ease-out forwards; }
       `}} />
 
       {/* ===== START MENU ===== */}
@@ -213,11 +223,23 @@ export default function App() {
           <div className={`absolute inset-0 z-20 pointer-events-none transition-colors duration-500 ${flashColor || 'bg-transparent'}`}></div>
 
           {/* Left / Top panel */}
-          <div className={`relative flex-1 flex flex-col justify-center items-center p-4 pt-[72px] md:p-12 transition-all duration-700 bg-gradient-to-br ${leftLeader.bgGradient} h-[50dvh] md:h-full`}>
+          <div
+            className="relative flex-1 flex flex-col justify-center items-center p-4 pt-[72px] md:p-12 transition-all duration-700 h-[50dvh] md:h-full"
+            style={hasLeftPhoto ? {
+              backgroundImage: `url(${leftLeader.photo})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center top',
+            } : undefined}
+          >
+            <div className={`absolute inset-0 bg-gradient-to-br ${leftLeader.bgGradient} transition-opacity duration-700 ${hasLeftPhoto ? 'opacity-40' : 'opacity-100'}`}></div>
+            {leftLeader.photo && (
+              <img src={leftLeader.photo} alt="" className="hidden"
+                onError={() => setPhotoErrors(prev => ({ ...prev, [leftLeader.id]: true }))} />
+            )}
             <div className="absolute inset-0 flex items-center justify-center opacity-10 overflow-hidden pointer-events-none">
               <span className="text-[15rem] md:text-[30rem] font-black">{leftLeader.years}</span>
             </div>
-            <div className="absolute inset-0 bg-black/20"></div>
+            <div className={`absolute inset-0 ${hasLeftPhoto ? 'bg-black/55' : 'bg-black/20'}`}></div>
 
             <div className="z-10 flex flex-col items-center text-center w-full max-w-xl">
               <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black mb-1 md:mb-2 drop-shadow-2xl leading-tight line-clamp-2 px-2">{leftLeader.name}</h2>
@@ -242,8 +264,20 @@ export default function App() {
           </div>
 
           {/* Right / Bottom panel */}
-          <div className={`relative flex-1 flex flex-col justify-center items-center p-4 pb-10 md:p-12 transition-all duration-700 bg-gradient-to-br ${rightLeader.bgGradient} h-[50dvh] md:h-full`}>
-            <div className="absolute inset-0 bg-black/30"></div>
+          <div
+            className="relative flex-1 flex flex-col justify-center items-center p-4 pb-10 md:p-12 transition-all duration-700 h-[50dvh] md:h-full"
+            style={hasRightPhoto ? {
+              backgroundImage: `url(${rightLeader.photo})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center top',
+            } : undefined}
+          >
+            <div className={`absolute inset-0 bg-gradient-to-br ${rightLeader.bgGradient} transition-opacity duration-700 ${hasRightPhoto ? 'opacity-40' : 'opacity-100'}`}></div>
+            {rightLeader.photo && (
+              <img src={rightLeader.photo} alt="" className="hidden"
+                onError={() => setPhotoErrors(prev => ({ ...prev, [rightLeader.id]: true }))} />
+            )}
+            <div className={`absolute inset-0 ${hasRightPhoto ? 'bg-black/55' : 'bg-black/30'}`}></div>
 
             <div className="z-10 flex flex-col items-center text-center w-full max-w-xl mt-4 md:mt-0">
               <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black mb-1 md:mb-2 drop-shadow-2xl leading-tight line-clamp-2 px-2">{rightLeader.name}</h2>
@@ -291,6 +325,17 @@ export default function App() {
                 )}
               </div>
 
+              {gameState === 'correct' && rightLeader.factEn && (
+                <div className="fact-reveal glass-panel mt-3 md:mt-4 px-4 py-3 md:px-5 md:py-4 rounded-xl max-w-sm w-full">
+                  <p className="text-[9px] md:text-xs text-yellow-400 uppercase tracking-widest font-bold mb-1">
+                    {t.funFact}
+                  </p>
+                  <p className="text-xs md:text-sm text-white/90 leading-relaxed text-left">
+                    {language === 'fr' ? rightLeader.factFr : rightLeader.factEn}
+                  </p>
+                </div>
+              )}
+
               <p className="text-xs md:text-lg text-slate-200 uppercase tracking-wider font-medium mt-3 md:mt-4">
                 {t.than} {leftLeader.name}
               </p>
@@ -317,6 +362,17 @@ export default function App() {
                     : <><span className="font-bold text-white">{rightLeader.name}</span> ruled for{' '}<span className="font-bold text-yellow-400">{rightLeader.years} years</span>, compared to{' '}<span className="font-bold text-yellow-400">{leftLeader.years} years</span>{' '}for{' '}<span className="font-bold text-white">{leftLeader.name}</span>.</>
                   }
                 </p>
+
+                {rightLeader.factEn && (
+                  <div className="glass-panel w-full rounded-xl p-4 md:p-5 mb-4 border border-yellow-400/20 fact-reveal">
+                    <p className="text-[9px] md:text-xs text-yellow-400 uppercase tracking-widest font-bold mb-1.5">
+                      {t.funFact}
+                    </p>
+                    <p className="text-sm text-white/80 leading-relaxed text-left">
+                      {language === 'fr' ? rightLeader.factFr : rightLeader.factEn}
+                    </p>
+                  </div>
+                )}
 
                 <div className="glass-panel w-full rounded-2xl p-4 md:p-6 mb-6 md:mb-8 flex justify-around relative overflow-hidden bg-black/40">
                   <div className="relative z-10">
