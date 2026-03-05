@@ -105,28 +105,29 @@ export default function App() {
     }, 1200);
   };
 
-  const langToggle = (
-    <div className="flex gap-1 glass-panel rounded-xl p-1">
+  const LangButtons = ({ size = 'sm' }) => (
+    <>
       {['en', 'fr'].map(lang => (
         <button
           key={lang}
           onClick={() => setLanguage(lang)}
-          className={`px-2.5 py-1 rounded-lg font-bold text-xs uppercase transition-all ${
-            language === lang ? 'bg-white text-black' : 'text-white/50 hover:text-white'
-          }`}
+          className={`uppercase font-black tracking-wider transition-all duration-200 rounded-lg
+            ${size === 'lg' ? 'px-3.5 py-2 text-sm' : 'px-2.5 py-1 text-[10px] md:text-xs'}
+            ${language === lang ? 'bg-white text-black shadow-sm' : 'text-white/40 hover:text-white/70'}
+          `}
         >
           {lang}
         </button>
       ))}
-    </div>
+    </>
   );
 
   return (
     <div className="h-[100dvh] w-full flex flex-col md:flex-row relative font-sans overflow-hidden bg-black text-white selection:bg-transparent">
       <style dangerouslySetInnerHTML={{__html: `
         @keyframes pulse-soft {
-          0%, 100% { transform: translate(-50%, -50%) scale(1); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4); }
-          50% { transform: translate(-50%, -50%) scale(1.05); box-shadow: 0 0 0 15px rgba(255, 255, 255, 0); }
+          0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4); }
+          50% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(255, 255, 255, 0); }
         }
         .vs-badge { animation: pulse-soft 3s infinite ease-in-out; }
         .glass-panel { background: rgba(0, 0, 0, 0.3); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
@@ -143,8 +144,8 @@ export default function App() {
           <div className="absolute inset-0 bg-black/65 backdrop-blur-sm"></div>
 
           {/* Language toggle */}
-          <div className="absolute top-5 right-5 z-10">
-            {langToggle}
+          <div className="absolute top-4 right-4 md:top-5 md:right-5 z-10 flex gap-1 glass-panel rounded-xl p-1">
+            <LangButtons size="lg" />
           </div>
 
           {/* Content */}
@@ -178,22 +179,33 @@ export default function App() {
       {/* ===== GAME ===== */}
       {gameState !== 'menu' && leftLeader && rightLeader && (
         <>
-          {/* Score header */}
-          <div className="absolute top-0 w-full p-3 md:p-6 flex justify-between items-start z-30 pointer-events-none">
-            <div className="glass-panel px-3 py-1.5 md:px-6 md:py-3 rounded-xl md:rounded-2xl flex flex-col items-center shadow-xl">
-              <span className="text-[10px] md:text-sm text-slate-300 font-bold tracking-widest uppercase opacity-80">{t.score}</span>
-              <span className="text-xl md:text-4xl font-black leading-none">{score}</span>
-            </div>
+          {/* Score bar — single centered pill */}
+          <div className="absolute top-0 left-0 right-0 z-30 flex justify-center p-3 md:p-4 pointer-events-none">
+            <div className="glass-panel rounded-2xl px-4 md:px-5 py-2 md:py-2.5 flex items-center gap-3 md:gap-4 shadow-xl">
 
-            <div className="pointer-events-auto self-center">
-              {langToggle}
-            </div>
+              {/* Score */}
+              <div className="flex flex-col items-center w-9 md:w-12">
+                <span className="text-[9px] md:text-[10px] text-slate-400 font-bold tracking-widest uppercase leading-none mb-0.5">{t.score}</span>
+                <span className="text-xl md:text-2xl font-black tabular-nums leading-none">{score}</span>
+              </div>
 
-            <div className="glass-panel px-3 py-1.5 md:px-6 md:py-3 rounded-xl md:rounded-2xl flex flex-col items-center shadow-xl">
-              <span className="text-[10px] md:text-sm text-yellow-400 font-bold tracking-widest uppercase flex items-center gap-1 opacity-90">
-                <Trophy size={12} className="md:w-4 md:h-4" /> {t.highScore}
-              </span>
-              <span className="text-xl md:text-4xl font-black text-yellow-400 leading-none">{highScore}</span>
+              <div className="h-7 w-px bg-white/20 shrink-0" />
+
+              {/* Lang toggle */}
+              <div className="flex gap-0.5 pointer-events-auto">
+                <LangButtons size="sm" />
+              </div>
+
+              <div className="h-7 w-px bg-white/20 shrink-0" />
+
+              {/* High score */}
+              <div className="flex flex-col items-center w-9 md:w-12">
+                <span className="text-[9px] md:text-[10px] text-yellow-400 font-bold tracking-widest uppercase leading-none mb-0.5 flex items-center gap-0.5">
+                  <Trophy size={7} className="shrink-0" />{t.highScoreShort}
+                </span>
+                <span className="text-xl md:text-2xl font-black text-yellow-400 tabular-nums leading-none">{highScore}</span>
+              </div>
+
             </div>
           </div>
 
@@ -201,7 +213,7 @@ export default function App() {
           <div className={`absolute inset-0 z-20 pointer-events-none transition-colors duration-500 ${flashColor || 'bg-transparent'}`}></div>
 
           {/* Left / Top panel */}
-          <div className={`relative flex-1 flex flex-col justify-center items-center p-4 pt-16 md:p-12 transition-all duration-700 bg-gradient-to-br ${leftLeader.bgGradient} h-[50dvh] md:h-full`}>
+          <div className={`relative flex-1 flex flex-col justify-center items-center p-4 pt-[72px] md:p-12 transition-all duration-700 bg-gradient-to-br ${leftLeader.bgGradient} h-[50dvh] md:h-full`}>
             <div className="absolute inset-0 flex items-center justify-center opacity-10 overflow-hidden pointer-events-none">
               <span className="text-[15rem] md:text-[30rem] font-black">{leftLeader.years}</span>
             </div>
@@ -222,8 +234,11 @@ export default function App() {
           </div>
 
           {/* VS badge */}
-          <div className="absolute top-1/2 left-1/2 vs-badge z-40 bg-white text-black w-12 h-12 md:w-20 md:h-20 rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.5)] border-4 border-black/10">
-            <span className="font-black text-lg md:text-3xl italic tracking-tighter pr-0.5 md:pr-1">VS</span>
+          {/* Outer div: positioning only — inner div: animation only */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-40">
+            <div className="vs-badge bg-white text-black w-12 h-12 md:w-20 md:h-20 rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.5)] border-4 border-black/10">
+              <span className="font-black text-lg md:text-3xl italic tracking-tighter pr-0.5 md:pr-1">VS</span>
+            </div>
           </div>
 
           {/* Right / Bottom panel */}
