@@ -4,7 +4,7 @@
     "name": "Fidel Castro",
     "country": "Cuba",
     "years": 49,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Fidel_Castro_in_Washington.jpg/320px-Fidel_Castro_in_Washington.jpg",
+    "photo": "/leaders/1.jpg",
     "factEn": "He survived an estimated 638 assassination attempts organized by the CIA — a world record according to Guinness.",
     "factFr": "Il aurait survécu à environ 638 tentatives d'assassinat organisées par la CIA, un record mondial selon le Livre Guinness."
   },
@@ -13,7 +13,7 @@
     "name": "Kim Il-sung",
     "country": "North Korea",
     "years": 46,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Kim_Il_Sung_Portrait_1966.png/320px-Kim_Il_Sung_Portrait_1966.png",
+    "photo": "/leaders/2.png",
     "factEn": "His birthday, April 15, is the most important holiday in North Korea — called the 'Day of the Sun.'",
     "factFr": "Son anniversaire, le 15 avril, est la fête la plus importante en Corée du Nord — appelée le 'Jour du Soleil'."
   },
@@ -22,7 +22,7 @@
     "name": "Muammar Gaddafi",
     "country": "Libya",
     "years": 42,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Moamer_el_Gadafi_%28cropped%29.jpg/320px-Moamer_el_Gadafi_%28cropped%29.jpg",
+    "photo": "/leaders/3.jpg",
     "factEn": "He was guarded by a 40-strong all-female unit of bodyguards known as the 'Amazonian Guard.'",
     "factFr": "Il était gardé par une unité de 40 femmes gardes du corps connues sous le nom de 'Garde Amazonienne'."
   },
@@ -31,7 +31,7 @@
     "name": "Omar Bongo",
     "country": "Gabon",
     "years": 41,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Omar_Bongo%2C_the_President_of_Gabon_in_Brussels_on_February_20%2C_1993_%281%2C_cropped%29.jpg/320px-Omar_Bongo%2C_the_President_of_Gabon_in_Brussels_on_February_20%2C_1993_%281%2C_cropped%29.jpg",
+    "photo": "/leaders/4.jpg",
     "factEn": "He converted to Islam in 1973 at the urging of Muammar Gaddafi, changing his first name to Omar.",
     "factFr": "Il s'est converti à l'islam en 1973 sous l'impulsion de Mouammar Kadhafi, changeant son prénom en Omar."
   },
@@ -40,7 +40,7 @@
     "name": "Enver Hoxha",
     "country": "Albania",
     "years": 40,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Enver_Hoxha_%28portret%29.jpg/320px-Enver_Hoxha_%28portret%29.jpg",
+    "photo": "/leaders/5.jpg",
     "factEn": "He built over 700,000 concrete bunkers across Albania — one for every four inhabitants — fearing invasion.",
     "factFr": "Il a fait construire plus de 700 000 bunkers en béton à travers l'Albanie — un pour quatre habitants — craignant une invasion."
   },
@@ -49,7 +49,7 @@
     "name": "Robert Mugabe",
     "country": "Zimbabwe",
     "years": 37,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Robert_Mugabe_Official_Portrait_%284x5_cropped%29.jpg/320px-Robert_Mugabe_Official_Portrait_%284x5_cropped%29.jpg",
+    "photo": "/leaders/6.jpg",
     "factEn": "He held seven academic degrees and was once celebrated as an African independence hero before becoming an autocrat.",
     "factFr": "Il possédait sept diplômes académiques et fut autrefois célébré comme un héros de l'indépendance africaine avant de devenir autocrate."
   },
@@ -58,7 +58,7 @@
     "name": "Francisco Franco",
     "country": "Spain",
     "years": 36,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/RETRATO_DEL_GRAL._FRANCISCO_FRANCO_BAHAMONDE_%28adjusted_levels%29.jpg/320px-RETRATO_DEL_GRAL._FRANCISCO_FRANCO_BAHAMONDE_%28adjusted_levels%29.jpg",
+    "photo": "/leaders/7.jpg",
     "factEn": "He kept Spain neutral during WWII but secretly sent 47,000 volunteer soldiers to fight alongside Hitler on the Eastern Front.",
     "factFr": "Il maintint l'Espagne neutre pendant la Seconde Guerre mondiale mais envoya secrètement 47 000 soldats volontaires combattre aux côtés de Hitler sur le Front de l'Est."
   },
@@ -67,7 +67,7 @@
     "name": "Josip Broz Tito",
     "country": "Yugoslavia",
     "years": 35,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Josip_Broz_Tito_uniform_portrait.jpg/320px-Josip_Broz_Tito_uniform_portrait.jpg",
+    "photo": "/leaders/8.jpg",
     "factEn": "He successfully defied Stalin in 1948. When Stalin kept sending assassins, Tito allegedly replied: 'Stop sending people to kill me or I'll send one of my own to Moscow.'",
     "factFr": "Il défia Staline avec succès en 1948. Quand Staline envoyait des assassins, Tito aurait répondu : 'Arrêtez d'envoyer des gens pour me tuer ou j'enverrai quelqu'un à Moscou.'"
   },
@@ -76,7 +76,7 @@
     "name": "Mobutu Sese Seko",
     "country": "Zaire",
     "years": 32,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Mobutu_%28cropped%29.jpg/320px-Mobutu_%28cropped%29.jpg",
+    "photo": "/leaders/9.jpg",
     "factEn": "He renamed the country Zaire, changed his own name, and mandated citizens abandon European names — all to promote 'authenticity.'",
     "factFr": "Il rebaptisa le pays Zaïre, changea son propre nom et imposa aux citoyens d'abandonner les noms européens — pour promouvoir 'l'authenticité'."
   },
@@ -85,7 +85,7 @@
     "name": "Suharto",
     "country": "Indonesia",
     "years": 31,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/President_Suharto%2C_1993.jpg/320px-President_Suharto%2C_1993.jpg",
+    "photo": "/leaders/10.jpg",
     "factEn": "He was ranked the most corrupt leader in modern history by Transparency International, allegedly embezzling up to $35 billion.",
     "factFr": "Il a été classé dirigeant le plus corrompu de l'histoire moderne par Transparency International, ayant prétendument détourné jusqu'à 35 milliards de dollars."
   },
@@ -94,7 +94,7 @@
     "name": "Mao Zedong",
     "country": "China",
     "years": 27,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Mao_Zedong_1950_Portrait_%283x4_cropped%29%282%29.jpg/320px-Mao_Zedong_1950_Portrait_%283x4_cropped%29%282%29.jpg",
+    "photo": "/leaders/11.jpg",
     "factEn": "His portrait still hangs on Tiananmen Gate today — despite his policies causing an estimated 15–55 million deaths.",
     "factFr": "Son portrait orne toujours la Porte de Tiananmen — malgré des politiques ayant causé la mort estimée de 15 à 55 millions de personnes."
   },
@@ -103,7 +103,7 @@
     "name": "Joseph Stalin",
     "country": "USSR",
     "years": 29,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Joseph_Stalin_in_1932_%284%29_%28cropped%29%282%29.jpg/320px-Joseph_Stalin_in_1932_%284%29_%28cropped%29%282%29.jpg",
+    "photo": "/leaders/12.jpg",
     "factEn": "Born Joseph Jughashvili in Georgia, he took the name 'Stalin' — meaning 'man of steel' — as a revolutionary pseudonym.",
     "factFr": "Né Iossif Djougachvili en Géorgie, il adopta le nom 'Staline' — signifiant 'homme d'acier' — comme pseudonyme révolutionnaire."
   },
@@ -112,7 +112,7 @@
     "name": "Saddam Hussein",
     "country": "Iraq",
     "years": 24,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Saddam_Hussein_in_1998.png/320px-Saddam_Hussein_in_1998.png",
+    "photo": "/leaders/13.png",
     "factEn": "He wrote four novels, including a romantic tale titled 'Zabibah and the King,' published anonymously in 2000.",
     "factFr": "Il a écrit quatre romans, dont une histoire romantique intitulée 'Zabiba et le Roi', publiée anonymement en 2000."
   },
@@ -121,7 +121,7 @@
     "name": "Nicolae Ceaușescu",
     "country": "Romania",
     "years": 24,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Nicolae_Ceau%C8%99escu_%283x4_cropped%29.jpg/320px-Nicolae_Ceau%C8%99escu_%283x4_cropped%29.jpg",
+    "photo": "/leaders/14.jpg",
     "factEn": "He and his wife Elena were tried, convicted, and executed by firing squad on Christmas Day 1989 — the trial lasted just one hour.",
     "factFr": "Lui et sa femme Elena furent jugés, condamnés et fusillés le jour de Noël 1989 — le procès n'a duré qu'une heure."
   },
@@ -130,7 +130,7 @@
     "name": "Augusto Pinochet",
     "country": "Chile",
     "years": 17,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Augusto_Pinochet_foto_oficial_%28cropped%29%28b%29.jpg/320px-Augusto_Pinochet_foto_oficial_%28cropped%29%28b%29.jpg",
+    "photo": "/leaders/15.jpg",
     "factEn": "He was placed under house arrest in London in 1998 after a Spanish judge sought his extradition for crimes against humanity.",
     "factFr": "Il fut assigné à résidence à Londres en 1998 après qu'un juge espagnol demanda son extradition pour crimes contre l'humanité."
   },
@@ -139,7 +139,7 @@
     "name": "Adolf Hitler",
     "country": "Germany",
     "years": 12,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Hitler_portrait_crop_%28cropped%29%282%29.jpg/320px-Hitler_portrait_crop_%28cropped%29%282%29.jpg",
+    "photo": "/leaders/16.jpg",
     "factEn": "He was a failed artist — rejected twice by the Vienna Academy of Fine Arts — before turning to politics.",
     "factFr": "Il était un artiste raté — refusé deux fois par l'Académie des beaux-arts de Vienne — avant de se tourner vers la politique."
   },
@@ -148,7 +148,7 @@
     "name": "Benito Mussolini",
     "country": "Italy",
     "years": 21,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Mussolini_mezzobusto.jpg/320px-Mussolini_mezzobusto.jpg",
+    "photo": "/leaders/17.jpg",
     "factEn": "He coined the term 'fascism' and was originally a socialist journalist before founding the first fascist movement.",
     "factFr": "Il a inventé le terme 'fascisme' et était à l'origine journaliste socialiste avant de fonder le premier mouvement fasciste."
   },
@@ -157,7 +157,7 @@
     "name": "Idi Amin",
     "country": "Uganda",
     "years": 8,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Idi_Amin_at_UN_%28United_Nations%2C_New_York%29_gtfy.00132_%28cropped%29.jpg/320px-Idi_Amin_at_UN_%28United_Nations%2C_New_York%29_gtfy.00132_%28cropped%29.jpg",
+    "photo": "/leaders/18.jpg",
     "factEn": "He gave himself the title 'His Excellency, President for Life, Field Marshal Al Hadji Doctor Idi Amin Dada, VC, DSO, MC, CBE.'",
     "factFr": "Il se donna le titre de 'Son Excellence, Président à vie, Maréchal Al Hadji Docteur Idi Amin Dada, VC, DSO, MC, CBE'."
   },
@@ -175,7 +175,7 @@
     "name": "Charles de Gaulle",
     "country": "France",
     "years": 10,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/De_Gaulle-OWI.jpg/320px-De_Gaulle-OWI.jpg",
+    "photo": "/leaders/20.jpg",
     "factEn": "Standing 1.96m tall, he was one of the tallest heads of state of his era — a physical presence he used to dominate any room.",
     "factFr": "Mesurant 1,96 m, il était l'un des chefs d'État les plus grands de son époque, une présence physique qu'il utilisait à son avantage."
   },
@@ -184,7 +184,7 @@
     "name": "Franklin D. Roosevelt",
     "country": "United States",
     "years": 12,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/FDR-1944-Campaign-Portrait_%283x4_retouched%2C_cropped%29.jpg/320px-FDR-1944-Campaign-Portrait_%283x4_retouched%2C_cropped%29.jpg",
+    "photo": "/leaders/21.jpg",
     "factEn": "He was the only US president elected four times, guiding the nation through both the Great Depression and most of World War II.",
     "factFr": "Il est le seul président américain élu quatre fois, guidant la nation à travers la Grande Dépression et la majeure partie de la Seconde Guerre mondiale."
   },
@@ -193,7 +193,7 @@
     "name": "Vladimir Putin",
     "country": "Russia",
     "years": 24,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%9F%D1%83%D1%82%D0%B8%D0%BD_%2808-03-2024%29_%28cropped%29_%28higher_res%29.jpg/320px-%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%9F%D1%83%D1%82%D0%B8%D0%BD_%2808-03-2024%29_%28cropped%29_%28higher_res%29.jpg",
+    "photo": "/leaders/22.jpg",
     "factEn": "Before entering politics, he was a KGB intelligence officer stationed in Dresden, East Germany, for five years.",
     "factFr": "Avant d'entrer en politique, il était officier du KGB basé à Dresde, en Allemagne de l'Est, pendant cinq ans."
   },
@@ -202,7 +202,7 @@
     "name": "Paul Biya",
     "country": "Cameroon",
     "years": 41,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Paul_Biya_in_December_14th%2C_2022.jpg/320px-Paul_Biya_in_December_14th%2C_2022.jpg",
+    "photo": "/leaders/23.jpg",
     "factEn": "He is famous for spending months at a time in a five-star Swiss hotel, earning him the nickname 'the absentee president.'",
     "factFr": "Il est célèbre pour passer des mois dans un hôtel cinq étoiles suisse, lui valant le surnom de 'président absent'."
   },
@@ -211,7 +211,7 @@
     "name": "Teodoro Obiang",
     "country": "Equatorial Guinea",
     "years": 44,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Teodoro_Obiang_Nguema_Mbasogo_on_September_26%2C_2024_%28cropped%29.jpg/320px-Teodoro_Obiang_Nguema_Mbasogo_on_September_26%2C_2024_%28cropped%29.jpg",
+    "photo": "/leaders/24.jpg",
     "factEn": "He seized power in 1979 by overthrowing and executing his own uncle, Francisco Macías Nguema.",
     "factFr": "Il prit le pouvoir en 1979 en renversant et faisant exécuter son propre oncle, Francisco Macías Nguema."
   },
@@ -220,7 +220,7 @@
     "name": "Ali Khamenei",
     "country": "Iran",
     "years": 34,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Ali_Khamenei_Nowruz_message_official_portrait_1397_02.jpg/320px-Ali_Khamenei_Nowruz_message_official_portrait_1397_02.jpg",
+    "photo": "/leaders/25.jpg",
     "factEn": "He lost partial use of his right hand in 1981 after a bomb explosion at a speech and has used only his left hand since.",
     "factFr": "Il perdit partiellement l'usage de sa main droite en 1981 lors d'une explosion de bombe pendant un discours et n'utilise plus que sa main gauche depuis."
   },
@@ -229,7 +229,7 @@
     "name": "François Mitterrand",
     "country": "France",
     "years": 14,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/President_Fran%C3%A7ois_Mitterrand_in_1983_%28cropped%29.jpg/320px-President_Fran%C3%A7ois_Mitterrand_in_1983_%28cropped%29.jpg",
+    "photo": "/leaders/26.jpg",
     "factEn": "He kept his terminal cancer secret for 11 years while governing France, revealing it only in 1992.",
     "factFr": "Il cacha son cancer en phase terminale pendant 11 ans tout en gouvernant la France, ne le révélant qu'en 1992."
   },
@@ -238,7 +238,7 @@
     "name": "Jacques Chirac",
     "country": "France",
     "years": 12,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Jacques_Chirac_%281997%29_%28cropped%29.jpg/320px-Jacques_Chirac_%281997%29_%28cropped%29.jpg",
+    "photo": "/leaders/27.jpg",
     "factEn": "During his student years in the US, he worked as a fork-lift operator and short-order cook in Boston.",
     "factFr": "Durant ses années d'études aux États-Unis, il travailla comme cariste et cuisinier à Boston."
   },
@@ -247,7 +247,7 @@
     "name": "Nelson Mandela",
     "country": "South Africa",
     "years": 5,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Nelson_Mandela_1994.jpg/320px-Nelson_Mandela_1994.jpg",
+    "photo": "/leaders/28.jpg",
     "factEn": "He spent 27 years in prison — 18 of them on Robben Island — before becoming South Africa's first democratically elected president.",
     "factFr": "Il passa 27 ans en prison — dont 18 sur l'île Robben — avant de devenir le premier président élu démocratiquement en Afrique du Sud."
   },
@@ -256,7 +256,7 @@
     "name": "Winston Churchill",
     "country": "United Kingdom",
     "years": 9,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Sir_Winston_Churchill_-_19086236948_%28restored%29.jpg/320px-Sir_Winston_Churchill_-_19086236948_%28restored%29.jpg",
+    "photo": "/leaders/29.jpg",
     "factEn": "He won the Nobel Prize in Literature in 1953 for his six-volume memoir of World War II.",
     "factFr": "Il remporta le prix Nobel de littérature en 1953 pour ses mémoires en six volumes sur la Seconde Guerre mondiale."
   },
@@ -265,7 +265,7 @@
     "name": "Hugo Chávez",
     "country": "Venezuela",
     "years": 14,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Hugo_Ch%C3%A1vez_in_Bras%C3%ADlia_2011_%283x4_cropped%29_%282%29.jpg/320px-Hugo_Ch%C3%A1vez_in_Bras%C3%ADlia_2011_%283x4_cropped%29_%282%29.jpg",
+    "photo": "/leaders/30.jpg",
     "factEn": "He hosted a weekly TV show called 'Aló Presidente' that sometimes ran for over 8 hours in a single broadcast.",
     "factFr": "Il animait une émission hebdomadaire intitulée 'Aló Presidente' qui durait parfois plus de 8 heures d'affilée."
   },
@@ -274,7 +274,7 @@
     "name": "Lee Kuan Yew",
     "country": "Singapore",
     "years": 31,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Prime_Minister_Lee_Kuan_Yew_of_Singapore_Making_a_Toast_at_a_State_Dinner_Held_in_His_Honor%2C_1975.jpg/320px-Prime_Minister_Lee_Kuan_Yew_of_Singapore_Making_a_Toast_at_a_State_Dinner_Held_in_His_Honor%2C_1975.jpg",
+    "photo": "/leaders/31.jpg",
     "factEn": "He transformed Singapore from a developing port city with no natural resources into one of the world's wealthiest nations.",
     "factFr": "Il transforma Singapour d'une ville portuaire en développement sans ressources naturelles en l'une des nations les plus riches du monde."
   },
@@ -283,7 +283,7 @@
     "name": "Mahathir Mohamad",
     "country": "Malaysia",
     "years": 24,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Mahathir_Mohamad_13112018_%28cropped%29.jpg/320px-Mahathir_Mohamad_13112018_%28cropped%29.jpg",
+    "photo": "/leaders/32.jpg",
     "factEn": "He became the world's oldest elected leader when he returned to power in 2018 at the age of 92.",
     "factFr": "Il devint le dirigeant élu le plus âgé du monde lorsqu'il revint au pouvoir en 2018 à l'âge de 92 ans."
   },
@@ -292,7 +292,7 @@
     "name": "Elizabeth II",
     "country": "United Kingdom",
     "years": 70,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Queen_Elizabeth_II_official_portrait_for_1959_tour_%28retouched%29_%28cropped%29_%283-to-4_aspect_ratio%29.jpg/320px-Queen_Elizabeth_II_official_portrait_for_1959_tour_%28retouched%29_%28cropped%29_%283-to-4_aspect_ratio%29.jpg",
+    "photo": "/leaders/33.jpg",
     "factEn": "She was the only person in the UK legally allowed to drive and travel without a licence or passport — both are issued in her name.",
     "factFr": "Elle était la seule personne au Royaume-Uni légalement autorisée à conduire et voyager sans permis ni passeport — tous deux délivrés en son nom."
   },
@@ -301,7 +301,7 @@
     "name": "Louis XIV",
     "country": "France",
     "years": 72,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Louis_XIV_of_France.jpg/320px-Louis_XIV_of_France.jpg",
+    "photo": "/leaders/34.jpg",
     "factEn": "He became King of France at age 4, making him the longest-reigning monarch of a major European country in recorded history.",
     "factFr": "Il devint roi de France à l'âge de 4 ans, faisant de lui le monarque au règne le plus long d'un grand pays européen dans l'histoire."
   },
@@ -310,7 +310,7 @@
     "name": "Queen Victoria",
     "country": "United Kingdom",
     "years": 63,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Queen_Victoria_by_Bassano.jpg/320px-Queen_Victoria_by_Bassano.jpg",
+    "photo": "/leaders/35.jpg",
     "factEn": "At the height of her reign, the British Empire covered over 24% of the Earth's land area, ruling 412 million people.",
     "factFr": "Au sommet de son règne, l'Empire britannique couvrait plus de 24 % des terres émergées et gouvernait 412 millions de personnes."
   },
@@ -319,7 +319,7 @@
     "name": "Emperor Hirohito",
     "country": "Japan",
     "years": 62,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Hirohito_in_dress_uniform_%28cropped%29.jpg/320px-Hirohito_in_dress_uniform_%28cropped%29.jpg",
+    "photo": "/leaders/36.jpg",
     "factEn": "He was a passionate marine biologist who discovered and named several new species of hydrozoa during his reign.",
     "factFr": "Il était un biologiste marin passionné qui découvrit et nomma plusieurs nouvelles espèces d'hydrozoaires pendant son règne."
   },
@@ -328,7 +328,7 @@
     "name": "Angela Merkel",
     "country": "Germany",
     "years": 16,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Angela_Merkel_2019_cropped.jpg/320px-Angela_Merkel_2019_cropped.jpg",
+    "photo": "/leaders/37.jpg",
     "factEn": "Before politics, she earned a PhD in quantum chemistry and worked as a researcher at a Berlin science institute.",
     "factFr": "Avant d'entrer en politique, elle obtint un doctorat en chimie quantique et travailla comme chercheuse dans un institut scientifique berlinois."
   },
@@ -337,7 +337,7 @@
     "name": "Franz Joseph I",
     "country": "Austria",
     "years": 68,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Franz_Joseph_I_of_Austria.1910_%28cropped%29.jpg/320px-Franz_Joseph_I_of_Austria.1910_%28cropped%29.jpg",
+    "photo": "/leaders/38.jpg",
     "factEn": "His life was marked by tragedies: his son Rudolf died in a suicide pact, his wife Empress Sisi was assassinated, and his nephew Franz Ferdinand's murder started WWI.",
     "factFr": "Sa vie fut marquée par les tragédies : son fils Rudolf mourut dans un pacte suicide, sa femme l'impératrice Sissi fut assassinée, et le meurtre de son neveu François-Ferdinand déclencha la Première Guerre mondiale."
   },
@@ -346,7 +346,7 @@
     "name": "Ramesses II",
     "country": "Ancient Egypt",
     "years": 66,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Ramses_II_British_Museum.jpg/320px-Ramses_II_British_Museum.jpg",
+    "photo": "/leaders/39.jpg",
     "factEn": "He fathered an estimated 96 sons and 60 daughters by his many wives and concubines, outliving most of his own children.",
     "factFr": "Il aurait eu environ 96 fils et 60 filles de ses nombreuses épouses et concubines, survivant à la plupart de ses propres enfants."
   },
@@ -355,7 +355,7 @@
     "name": "John Paul II",
     "country": "Vatican City",
     "years": 26,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/ADAMELLO_-_PAPA_-_Giovanni_Paolo_II_-_panoramio_%28cropped%29.jpg/320px-ADAMELLO_-_PAPA_-_Giovanni_Paolo_II_-_panoramio_%28cropped%29.jpg",
+    "photo": "/leaders/40.jpg",
     "factEn": "He survived an assassination attempt in 1981, then personally visited and forgave his shooter Mehmet Ali Ağca in prison.",
     "factFr": "Il survécut à une tentative d'assassinat en 1981, puis rendit visite à son agresseur Mehmet Ali Ağca en prison pour lui pardonner."
   },
@@ -364,7 +364,7 @@
     "name": "Emperor Augustus",
     "country": "Roman Empire",
     "years": 40,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Augustus_of_Prima_Porta_%28inv._2290%29.jpg/320px-Augustus_of_Prima_Porta_%28inv._2290%29.jpg",
+    "photo": "/leaders/41.jpg",
     "factEn": "Born Octavian, he transformed Rome from a Republic into an Empire while maintaining the illusion of republican rule.",
     "factFr": "Né Octave, il transforma Rome d'une République en un Empire tout en maintenant l'illusion du gouvernement républicain."
   },
@@ -373,7 +373,7 @@
     "name": "Bhumibol Adulyadej",
     "country": "Thailand",
     "years": 70,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Aankomst_Koning_Bhumibol_en_Koningin_Sirikit_te_Den_Haag%2C_Koning_Bhumibol%2C_Bestanddeelnr_911-6993_%28cropped%29%282%29.jpg/320px-Aankomst_Koning_Bhumibol_en_Koningin_Sirikit_te_Den_Haag%2C_Koning_Bhumibol%2C_Bestanddeelnr_911-6993_%28cropped%29%282%29.jpg",
+    "photo": "/leaders/42.jpg",
     "factEn": "He was the world's longest-reigning monarch and was revered as a near-divine figure in Thailand during his lifetime.",
     "factFr": "Il fut le monarque régnant le plus longtemps dans le monde et fut vénéré comme une figure quasi divine en Thaïlande de son vivant."
   },
@@ -382,7 +382,7 @@
     "name": "Hassan II",
     "country": "Morocco",
     "years": 38,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Hassan_II_%281983%29.jpg/320px-Hassan_II_%281983%29.jpg",
+    "photo": "/leaders/43.jpg",
     "factEn": "He survived two assassination attempts — one involved fighter jets attacking his Boeing 727 mid-flight in 1972.",
     "factFr": "Il survécut à deux tentatives d'assassinat — l'une impliqua des chasseurs attaquant son Boeing 727 en plein vol en 1972."
   },
@@ -391,7 +391,7 @@
     "name": "King Hussein",
     "country": "Jordan",
     "years": 46,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/HusseinJordanien.jpg/320px-HusseinJordanien.jpg",
+    "photo": "/leaders/44.jpg",
     "factEn": "He survived 12 assassination attempts and was a licensed pilot who personally flew his own jet aircraft throughout his reign.",
     "factFr": "Il survécut à 12 tentatives d'assassinat et était pilote breveté qui pilotait personnellement ses propres avions à réaction tout au long de son règne."
   },
@@ -400,7 +400,7 @@
     "name": "F. Houphouët-Boigny",
     "country": "Ivory Coast",
     "years": 33,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/F%C3%A9lix_Houphou%C3%ABt-Boigny_1962-07-16.jpg/320px-F%C3%A9lix_Houphou%C3%ABt-Boigny_1962-07-16.jpg",
+    "photo": "/leaders/45.jpg",
     "factEn": "He built the world's largest church — the Basilica of Our Lady of Peace in Yamoussoukro — at a cost of $300 million.",
     "factFr": "Il fit construire la plus grande église du monde — la Basilique Notre-Dame de la Paix à Yamoussoukro — pour un coût de 300 millions de dollars."
   },
@@ -409,7 +409,7 @@
     "name": "Haile Selassie I",
     "country": "Ethiopia",
     "years": 44,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Haile_Selassie_in_full_dress_%283x4_cropped%29.jpg/320px-Haile_Selassie_in_full_dress_%283x4_cropped%29.jpg",
+    "photo": "/leaders/46.jpg",
     "factEn": "He is considered a messianic figure by the Rastafari movement and is worshipped as God incarnate in some of its branches.",
     "factFr": "Il est considéré comme une figure messianique par le mouvement rastafari et vénéré comme Dieu incarné dans certaines de ses branches."
   },
@@ -418,7 +418,7 @@
     "name": "Catherine the Great",
     "country": "Russia",
     "years": 34,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Catherine_II_after_Roslin%2C_Rokotov_%281780s%2C_Kunsthistorisches_Museum%29.jpg/320px-Catherine_II_after_Roslin%2C_Rokotov_%281780s%2C_Kunsthistorisches_Museum%29.jpg",
+    "photo": "/leaders/47.jpg",
     "factEn": "Born a minor German princess, she engineered a palace coup to depose her own husband Tsar Peter III and seize the Russian throne.",
     "factFr": "Née princesse allemande de rang modeste, elle orchestra un coup de palais pour déposer son mari le tsar Pierre III et s'emparer du trône de Russie."
   },
@@ -427,7 +427,7 @@
     "name": "Peter the Great",
     "country": "Russia",
     "years": 42,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Inconnu_d%27apr%C3%A8s_J.-M._Nattier%2C_Portrait_de_Pierre_Ier_%28mus%C3%A9e_de_l%E2%80%99Ermitage%29.jpg/320px-Inconnu_d%27apr%C3%A8s_J.-M._Nattier%2C_Portrait_de_Pierre_Ier_%28mus%C3%A9e_de_l%E2%80%99Ermitage%29.jpg",
+    "photo": "/leaders/48.jpg",
     "factEn": "Standing 2.03m tall, he worked incognito as a carpenter in Dutch shipyards to learn Western shipbuilding techniques firsthand.",
     "factFr": "Mesurant 2,03 m, il travailla incognito comme charpentier dans les chantiers navals néerlandais pour apprendre directement les techniques occidentales de construction navale."
   },
@@ -436,7 +436,7 @@
     "name": "Kim Jong-il",
     "country": "North Korea",
     "years": 17,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Kim_Jong-il_on_24_August_2011_%28cropped%29.jpg/320px-Kim_Jong-il_on_24_August_2011_%28cropped%29.jpg",
+    "photo": "/leaders/49.jpg",
     "factEn": "State media claimed he was born under a double rainbow on the sacred Mount Paektu — in reality he was born in the USSR.",
     "factFr": "Les médias officiels affirmaient qu'il naquit sous un double arc-en-ciel sur le sacré Mont Paektu — en réalité il naquit en URSS."
   },
@@ -445,7 +445,7 @@
     "name": "Kim Jong-un",
     "country": "North Korea",
     "years": 12,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Kim_Jong-un_and_Vladimir_Putin_%282023-09-13%29_12_%28cropped%29.jpg/320px-Kim_Jong-un_and_Vladimir_Putin_%282023-09-13%29_12_%28cropped%29.jpg",
+    "photo": "/leaders/50.jpg",
     "factEn": "He reportedly attended school in Bern, Switzerland, under a false identity as the son of a North Korean embassy employee.",
     "factFr": "Il aurait fréquenté une école à Berne, en Suisse, sous une fausse identité en tant que fils d'un employé de l'ambassade nord-coréenne."
   },
@@ -454,7 +454,7 @@
     "name": "Alexander the Great",
     "country": "Macedonia",
     "years": 13,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Alexander_Mosaic_detail_of_Alexander_the_Great_%283x4_cropped%29.jpg/320px-Alexander_Mosaic_detail_of_Alexander_the_Great_%283x4_cropped%29.jpg",
+    "photo": "/leaders/51.jpg",
     "factEn": "He never lost a single battle in his entire military career, conquering an empire stretching from Greece to northwestern India.",
     "factFr": "Il n'a jamais perdu une seule bataille de toute sa carrière militaire, conquérant un empire s'étendant de la Grèce au nord-ouest de l'Inde."
   },
@@ -463,7 +463,7 @@
     "name": "Julius Caesar",
     "country": "Ancient Rome",
     "years": 5,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Retrato_de_Julio_C%C3%A9sar_%2826724093101%29_%28cropped%29.jpg/320px-Retrato_de_Julio_C%C3%A9sar_%2826724093101%29_%28cropped%29.jpg",
+    "photo": "/leaders/52.jpg",
     "factEn": "When captured by pirates as a young man, he laughed at their ransom demand and promised to return and crucify them — which he did.",
     "factFr": "Capturé par des pirates dans sa jeunesse, il rit de leur demande de rançon et leur promit de revenir pour les crucifier — ce qu'il fit."
   },
@@ -472,7 +472,7 @@
     "name": "Napoleon I",
     "country": "France",
     "years": 10,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Jacques-Louis_David_-_The_Emperor_Napoleon_in_His_Study_at_the_Tuileries_-_Google_Art_Project.jpg/320px-Jacques-Louis_David_-_The_Emperor_Napoleon_in_His_Study_at_the_Tuileries_-_Google_Art_Project.jpg",
+    "photo": "/leaders/53.jpg",
     "factEn": "The idea that he was unusually short is a historical myth — he was 1.68m tall, average height for a Frenchman of his era.",
     "factFr": "L'idée qu'il était anormalement petit est un mythe historique — il mesurait 1,68 m, taille dans la moyenne pour un Français de son époque."
   },
@@ -481,7 +481,7 @@
     "name": "Gamal Abdel Nasser",
     "country": "Egypt",
     "years": 14,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Stevan_Kragujevic%2C_Gamal_Abdel_Naser_u_Beogradu%2C_1962.jpg/320px-Stevan_Kragujevic%2C_Gamal_Abdel_Naser_u_Beogradu%2C_1962.jpg",
+    "photo": "/leaders/54.jpg",
     "factEn": "His nationalization of the Suez Canal in 1956 triggered a war with Britain, France, and Israel — yet he emerged politically victorious.",
     "factFr": "Sa nationalisation du canal de Suez en 1956 déclencha une guerre avec la Grande-Bretagne, la France et Israël — mais il en sortit politiquement victorieux."
   },
@@ -490,7 +490,7 @@
     "name": "Hosni Mubarak",
     "country": "Egypt",
     "years": 30,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Hosni_Mubarak_-_Official_Photo.JPG/320px-Hosni_Mubarak_-_Official_Photo.JPG",
+    "photo": "/leaders/55.jpg",
     "factEn": "He survived at least six assassination attempts and ruled under an uninterrupted state of emergency for his entire 30-year tenure.",
     "factFr": "Il survécut à au moins six tentatives d'assassinat et gouverna sous un état d'urgence ininterrompu pendant toute sa présidence de 30 ans."
   },
@@ -499,7 +499,7 @@
     "name": "Bashar al-Assad",
     "country": "Syria",
     "years": 24,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Bashar_al-Assad_%282018-05-17%29_02_%28cropped%29.jpg/320px-Bashar_al-Assad_%282018-05-17%29_02_%28cropped%29.jpg",
+    "photo": "/leaders/56.jpg",
     "factEn": "He trained as an ophthalmologist in London and was not expected to rule — he only came to power after his elder brother's death in a car crash.",
     "factFr": "Il se forma comme ophtalmologiste à Londres et n'était pas destiné à gouverner — il n'accéda au pouvoir qu'après la mort de son frère aîné dans un accident de voiture."
   },
@@ -508,7 +508,7 @@
     "name": "Hafez al-Assad",
     "country": "Syria",
     "years": 29,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Hafez_al-Assad_official_portrait_%28cropped%29.jpg/320px-Hafez_al-Assad_official_portrait_%28cropped%29.jpg",
+    "photo": "/leaders/57.jpg",
     "factEn": "Born into poverty in a minority Alawite village, he clawed his way through the military to become the uncontested ruler of Syria.",
     "factFr": "Né dans la pauvreté dans un village alaouïte minoritaire, il gravit les échelons militaires pour devenir le dirigeant incontesté de la Syrie."
   },
@@ -517,7 +517,7 @@
     "name": "Ferdinand Marcos",
     "country": "Philippines",
     "years": 21,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Ferdinand_Marcos_%28cropped%29%282%29.jpg/320px-Ferdinand_Marcos_%28cropped%29%282%29.jpg",
+    "photo": "/leaders/58.jpg",
     "factEn": "When rebels raided his palace after his ousting in 1986, they found his wife Imelda's collection of over 3,000 pairs of shoes.",
     "factFr": "Quand des rebelles envahirent son palais après sa destitution en 1986, ils découvrirent la collection de plus de 3 000 paires de chaussures de sa femme Imelda."
   },
@@ -526,7 +526,7 @@
     "name": "Sukarno",
     "country": "Indonesia",
     "years": 22,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Presiden_Sukarno_%28retouched%29.jpg/320px-Presiden_Sukarno_%28retouched%29.jpg",
+    "photo": "/leaders/59.jpg",
     "factEn": "He delivered Indonesia's Declaration of Independence from his own home, as Japanese-occupied buildings were unavailable.",
     "factFr": "Il proclama la Déclaration d'Indépendance de l'Indonésie depuis sa propre demeure, les bâtiments occupés par les Japonais étant indisponibles."
   },
@@ -535,7 +535,7 @@
     "name": "N. Nazarbayev",
     "country": "Kazakhstan",
     "years": 29,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/%D0%92%D1%81%D1%82%D1%80%D0%B5%D1%87%D0%B0_%D1%81_%D0%9D%D1%83%D1%80%D1%81%D1%83%D0%BB%D1%82%D0%B0%D0%BD%D0%BE%D0%BC_%D0%9D%D0%B0%D0%B7%D0%B0%D1%80%D0%B1%D0%B0%D0%B5%D0%B2%D1%8B%D0%BC_%282025-05-29%29_3_%28cropped%29.jpg/320px-%D0%92%D1%81%D1%82%D1%80%D0%B5%D1%87%D0%B0_%D1%81_%D0%9D%D1%83%D1%80%D1%81%D1%83%D0%BB%D1%82%D0%B0%D0%BD%D0%BE%D0%BC_%D0%9D%D0%B0%D0%B7%D0%B0%D1%80%D0%B1%D0%B0%D0%B5%D0%B2%D1%8B%D0%BC_%282025-05-29%29_3_%28cropped%29.jpg",
+    "photo": "/leaders/60.jpg",
     "factEn": "He renamed the capital city of Kazakhstan 'Nur-Sultan' after himself in 2019 — a decision reversed in 2022.",
     "factFr": "Il rebaptisa la capitale du Kazakhstan 'Nur-Sultan' d'après lui-même en 2019 — une décision inversée en 2022."
   },
@@ -544,7 +544,7 @@
     "name": "A. Lukashenko",
     "country": "Belarus",
     "years": 30,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%9B%D1%83%D0%BA%D0%B0%D1%88%D0%B5%D0%BD%D0%BA%D0%BE_-_08_%2814-03-2025%29.jpg/320px-%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%9B%D1%83%D0%BA%D0%B0%D1%88%D0%B5%D0%BD%D0%BA%D0%BE_-_08_%2814-03-2025%29.jpg",
+    "photo": "/leaders/61.jpg",
     "factEn": "He was the only member of the Belarusian parliament to vote against the dissolution of the Soviet Union in 1991.",
     "factFr": "Il fut le seul membre du parlement biélorusse à voter contre la dissolution de l'Union soviétique en 1991."
   },
@@ -553,7 +553,7 @@
     "name": "Recep T. Erdogan",
     "country": "Turkey",
     "years": 21,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Turkish_President_Recep_Tayyip_Erdo%C4%9Fan_in_January_2024_%28cropped%29.jpg/320px-Turkish_President_Recep_Tayyip_Erdo%C4%9Fan_in_January_2024_%28cropped%29.jpg",
+    "photo": "/leaders/62.jpg",
     "factEn": "He was jailed for four months in 1999 for reciting a poem deemed too religious — an imprisonment that launched his national political career.",
     "factFr": "Il fut emprisonné quatre mois en 1999 pour avoir récité un poème jugé trop religieux — une incarcération qui lança sa carrière politique nationale."
   },
@@ -562,7 +562,7 @@
     "name": "Margaret Thatcher",
     "country": "United Kingdom",
     "years": 11,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Margaret_Thatcher_stock_portrait_%28cropped%29.jpg/320px-Margaret_Thatcher_stock_portrait_%28cropped%29.jpg",
+    "photo": "/leaders/63.jpg",
     "factEn": "She trained as a research chemist under Nobel laureate Dorothy Hodgkin before becoming a barrister and then a politician.",
     "factFr": "Elle se forma comme chimiste de recherche sous la direction de la lauréate du prix Nobel Dorothy Hodgkin avant de devenir avocate puis femme politique."
   },
@@ -571,7 +571,7 @@
     "name": "Tony Blair",
     "country": "United Kingdom",
     "years": 10,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Tony_Blair_%282010%29.jpg/320px-Tony_Blair_%282010%29.jpg",
+    "photo": "/leaders/64.jpg",
     "factEn": "Before politics, he played in a rock band called Ugly Rumours at Oxford and seriously considered a career in music.",
     "factFr": "Avant d'entrer en politique, il jouait dans un groupe de rock appelé Ugly Rumours à Oxford et envisagea sérieusement une carrière musicale."
   },
@@ -580,7 +580,7 @@
     "name": "Justin Trudeau",
     "country": "Canada",
     "years": 9,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Prime_Minister_Trudeau%27s_message_on_Christmas_2023_%280m29s%29_%28cropped%29.jpg/320px-Prime_Minister_Trudeau%27s_message_on_Christmas_2023_%280m29s%29_%28cropped%29.jpg",
+    "photo": "/leaders/65.jpg",
     "factEn": "Before entering politics, he was a drama teacher and substitute teacher at a Vancouver secondary school.",
     "factFr": "Avant d'entrer en politique, il était professeur de théâtre et enseignant suppléant dans un lycée de Vancouver."
   },
@@ -589,7 +589,7 @@
     "name": "Evo Morales",
     "country": "Bolivia",
     "years": 13,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Evo_Morales_Ayma_%28cropped_3%29.jpg/320px-Evo_Morales_Ayma_%28cropped_3%29.jpg",
+    "photo": "/leaders/66.jpg",
     "factEn": "He rose from coca leaf farmer and union leader to become Bolivia's first indigenous president.",
     "factFr": "Il passa de cultivateur de feuilles de coca et dirigeant syndical à premier président indigène de la Bolivie."
   },
@@ -598,7 +598,7 @@
     "name": "Abraham Lincoln",
     "country": "United States",
     "years": 4,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Abraham_Lincoln_1863_Portrait_%283x4_cropped%29.jpg/320px-Abraham_Lincoln_1863_Portrait_%283x4_cropped%29.jpg",
+    "photo": "/leaders/67.jpg",
     "factEn": "He is the only US president to have held a patent — for a device to lift riverboats over shallow waters, though it was never manufactured.",
     "factFr": "Il est le seul président américain à avoir déposé un brevet — pour un dispositif permettant de soulever les bateaux fluviaux au-dessus des hauts-fonds, jamais fabriqué."
   },
@@ -607,7 +607,7 @@
     "name": "George Washington",
     "country": "United States",
     "years": 8,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Gilbert_Stuart_Williamstown_Portrait_of_George_Washington.jpg/320px-Gilbert_Stuart_Williamstown_Portrait_of_George_Washington.jpg",
+    "photo": "/leaders/68.jpg",
     "factEn": "He was the only Founding Father who freed his enslaved people — but only upon the death of his wife Martha.",
     "factFr": "Il fut le seul Père fondateur à avoir affranchi ses esclaves — mais seulement à la mort de sa femme Martha."
   },
@@ -616,7 +616,7 @@
     "name": "Emmanuel Macron",
     "country": "France",
     "years": 7,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Emmanuel_Macron_2025_%28cropped%29.jpg/320px-Emmanuel_Macron_2025_%28cropped%29.jpg",
+    "photo": "/leaders/69.jpg",
     "factEn": "At 39, he became the youngest French president ever elected and had never held elected office before his victory.",
     "factFr": "À 39 ans, il devint le plus jeune président français jamais élu et n'avait jamais exercé de fonction élective avant sa victoire."
   },
@@ -625,7 +625,7 @@
     "name": "Shinzo Abe",
     "country": "Japan",
     "years": 9,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Shinz%C5%8D_Abe_20120501.jpg/320px-Shinz%C5%8D_Abe_20120501.jpg",
+    "photo": "/leaders/70.jpg",
     "factEn": "He became Japan's longest-serving prime minister and was the first sitting Japanese PM to visit Pearl Harbor.",
     "factFr": "Il devint le Premier ministre japonais ayant servi le plus longtemps et fut le premier Premier ministre japonais en exercice à visiter Pearl Harbor."
   },
@@ -634,7 +634,7 @@
     "name": "Suleiman the Magnificent",
     "country": "Ottoman Empire",
     "years": 46,
-    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/EmperorSuleiman.jpg/320px-EmperorSuleiman.jpg",
+    "photo": "/leaders/71.jpg",
     "factEn": "He was also a gifted poet who wrote under the pen name 'Muhibbi,' composing over 3,000 couplets of Persian and Turkish verse.",
     "factFr": "Il était aussi un poète talentueux qui écrivait sous le pseudonyme 'Muhibbi', composant plus de 3 000 distiques de poésie persane et turque."
   }
