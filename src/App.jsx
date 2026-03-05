@@ -42,11 +42,11 @@ const AnimatedNumber = ({ value, duration = 1000, onComplete }) => {
 };
 
 export default function App() {
-  const [language, setLanguage] = useState('fr');
+  const [language, setLanguage] = useState(() => localStorage.getItem('rs_lang') || 'en');
   const t = translations[language];
 
   const [score, setScore] = useState(0);
-  const [highScore, setHighScore] = useState(0);
+  const [highScore, setHighScore] = useState(() => Number(localStorage.getItem('rs_highscore')) || 0);
   const [leftLeader, setLeftLeader] = useState(null);
   const [rightLeader, setRightLeader] = useState(null);
   const [playedIds, setPlayedIds] = useState([]);
@@ -102,7 +102,10 @@ export default function App() {
       } else {
         setGameState('gameover');
         setFlashColor('bg-red-500/40');
-        if (score > highScore) setHighScore(score);
+        if (score > highScore) {
+          setHighScore(score);
+          localStorage.setItem('rs_highscore', score);
+        }
       }
     }, 1200);
   };
@@ -112,7 +115,7 @@ export default function App() {
       {['en', 'fr'].map(lang => (
         <button
           key={lang}
-          onClick={() => setLanguage(lang)}
+          onClick={() => { setLanguage(lang); localStorage.setItem('rs_lang', lang); }}
           className={`uppercase font-black tracking-wider transition-all duration-200 rounded-lg
             ${size === 'lg' ? 'px-3.5 py-2 text-sm' : 'px-2.5 py-1 text-[10px] md:text-xs'}
             ${language === lang ? 'bg-white text-black shadow-sm' : 'text-white/40 hover:text-white/70'}
