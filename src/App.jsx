@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
-import { Trophy, ChevronUp, ChevronDown, XCircle, RotateCcw, CheckCircle } from 'lucide-react';
+import { Trophy, ChevronUp, ChevronDown, XCircle, RotateCcw, CheckCircle, Medal } from 'lucide-react';
 import initialLeadersData from './leaders.json';
 import { translations } from './i18n';
+import { supabase } from './supabase';
 
 const gradients = [
   "from-blue-600 to-indigo-900",
@@ -50,10 +51,45 @@ export default function App() {
   const [leftLeader, setLeftLeader] = useState(null);
   const [rightLeader, setRightLeader] = useState(null);
   const [playedIds, setPlayedIds] = useState([]);
-  // 'menu' | 'playing' | 'revealing' | 'correct' | 'gameover'
+  // 'menu' | 'playing' | 'revealing' | 'correct' | 'gameover' | 'leaderboard'
   const [gameState, setGameState] = useState('menu');
   const [flashColor, setFlashColor] = useState(null);
   const [photoErrors, setPhotoErrors] = useState({});
+
+  // Leaderboard state
+  const [nameInput, setNameInput] = useState(() => localStorage.getItem('rs_name') || '');
+  const [submitStatus, setSubmitStatus] = useState('idle'); // 'idle' | 'submitting' | 'submitted'
+  const [topScores, setTopScores] = useState([]);
+  const [scoresLoading, setScoresLoading] = useState(false);
+
+  const fetchTopScores = async () => {
+    setScoresLoading(true);
+    const { data } = await supabase
+      .from('scores')
+      .select('name, score')
+      .order('score', { ascending: false })
+      .limit(10);
+    setTopScores(data || []);
+    setScoresLoading(false);
+  };
+
+  const handleSubmitScore = async () => {
+    const trimmed = nameInput.trim();
+    if (!trimmed || submitStatus !== 'idle') return;
+    setSubmitStatus('submitting');
+    const { error } = await supabase.from('scores').insert({ name: trimmed, score });
+    if (!error) {
+      localStorage.setItem('rs_name', trimmed);
+      setSubmitStatus('submitted');
+    } else {
+      setSubmitStatus('idle');
+    }
+  };
+
+  const openLeaderboard = () => {
+    fetchTopScores();
+    setGameState('leaderboard');
+  };
 
   const getUniqueRandomLeader = (currentPlayedIds, excludeId = null) => {
     let available = initialLeadersData.filter(l => !currentPlayedIds.includes(l.id) && l.id !== excludeId);
@@ -75,6 +111,7 @@ export default function App() {
     setScore(0);
     setGameState('playing');
     setFlashColor(null);
+    setSubmitStatus('idle');
   };
 
   const handleGuess = (guess) => {
@@ -181,16 +218,72 @@ export default function App() {
 
             <button
               onClick={initGame}
-              className="w-full max-w-xs py-4 md:py-5 bg-white text-black rounded-2xl font-black text-xl md:text-2xl uppercase tracking-wider hover:bg-yellow-400 transition-all duration-300 active:scale-95 shadow-[0_0_30px_rgba(255,255,255,0.2)] hover:shadow-[0_0_40px_rgba(250,204,21,0.5)]"
+              className="w-full max-w-xs py-4 md:py-5 bg-white text-black rounded-2xl font-black text-xl md:text-2xl uppercase tracking-wider hover:bg-yellow-400 transition-all duration-300 active:scale-95 shadow-[0_0_30px_rgba(255,255,255,0.2)] hover:shadow-[0_0_40px_rgba(250,204,21,0.5)] mb-3"
             >
               {t.play}
+            </button>
+
+            <button
+              onClick={openLeaderboard}
+              className="w-full max-w-xs py-3 glass-panel text-white/70 rounded-2xl font-bold text-base uppercase tracking-wider hover:text-white hover:bg-white/10 transition-all duration-300 active:scale-95 flex items-center justify-center gap-2"
+            >
+              <Medal className="w-5 h-5 text-yellow-400" />
+              {t.leaderboard}
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* ===== LEADERBOARD ===== */}
+      {gameState === 'leaderboard' && (
+        <div className="absolute inset-0 z-50 flex flex-col items-center justify-center p-4 md:p-8">
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-900 to-black"></div>
+          <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+
+          <div className="relative z-10 flex flex-col items-center text-center max-w-lg w-full">
+            <Trophy className="w-12 h-12 text-yellow-400 mb-3 drop-shadow-[0_0_20px_rgba(250,204,21,0.6)]" />
+            <h2 className="text-3xl md:text-5xl font-black uppercase tracking-wider mb-6">{t.leaderboard}</h2>
+
+            <div className="glass-panel rounded-2xl w-full overflow-hidden mb-6">
+              {/* Table header */}
+              <div className="flex items-center px-4 py-2.5 border-b border-white/10 text-xs text-slate-400 uppercase tracking-widest font-bold">
+                <span className="w-8 text-center">{t.rank}</span>
+                <span className="flex-1 text-left ml-3">{t.player}</span>
+                <span className="w-16 text-right">{t.score}</span>
+              </div>
+
+              {scoresLoading ? (
+                <div className="py-10 text-slate-400 text-sm">{t.submitting}</div>
+              ) : topScores.length === 0 ? (
+                <div className="py-10 text-slate-400 text-sm">{t.noScores}</div>
+              ) : (
+                topScores.map((entry, i) => (
+                  <div
+                    key={i}
+                    className={`flex items-center px-4 py-3 border-b border-white/5 last:border-0 ${i === 0 ? 'bg-yellow-400/10' : ''}`}
+                  >
+                    <span className={`w-8 text-center font-black text-base ${i === 0 ? 'text-yellow-400' : i === 1 ? 'text-slate-300' : i === 2 ? 'text-amber-600' : 'text-slate-500'}`}>
+                      {i + 1}
+                    </span>
+                    <span className="flex-1 text-left ml-3 font-semibold truncate">{entry.name}</span>
+                    <span className="w-16 text-right font-black text-lg text-white">{entry.score}</span>
+                  </div>
+                ))
+              )}
+            </div>
+
+            <button
+              onClick={() => setGameState('menu')}
+              className="w-full max-w-xs py-3.5 glass-panel text-white/70 rounded-2xl font-bold text-base uppercase tracking-wider hover:text-white hover:bg-white/10 transition-all duration-300 active:scale-95"
+            >
+              {t.backToMenu}
             </button>
           </div>
         </div>
       )}
 
       {/* ===== GAME ===== */}
-      {gameState !== 'menu' && leftLeader && rightLeader && (
+      {gameState !== 'menu' && gameState !== 'leaderboard' && leftLeader && rightLeader && (
         <>
           {/* Score bar — single centered pill */}
           <div className="absolute top-0 left-0 right-0 z-30 flex justify-center p-3 md:p-4 pointer-events-none">
@@ -259,7 +352,6 @@ export default function App() {
           </div>
 
           {/* VS badge */}
-          {/* Outer div: positioning only — inner div: animation only */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-40">
             <div className="vs-badge bg-white text-black w-12 h-12 md:w-20 md:h-20 rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(0,0,0,0.5)] border-4 border-black/10">
               <span className="font-black text-lg md:text-3xl italic tracking-tighter pr-0.5 md:pr-1">VS</span>
@@ -348,18 +440,18 @@ export default function App() {
           {/* Game over screen */}
           {gameState === 'gameover' && (
             <div className="absolute inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-md p-4 animate-in fade-in duration-300">
-              <div className="bg-slate-900 border border-slate-700 p-6 md:p-12 rounded-[2rem] flex flex-col items-center text-center max-w-lg w-full shadow-2xl animate-in zoom-in-95 duration-500 mt-10 md:mt-0">
+              <div className="bg-slate-900 border border-slate-700 p-6 md:p-10 rounded-[2rem] flex flex-col items-center text-center max-w-lg w-full shadow-2xl animate-in zoom-in-95 duration-500 mt-10 md:mt-0 overflow-y-auto max-h-[90dvh]">
 
-                <div className="relative w-16 h-16 md:w-24 md:h-24 mb-4 md:mb-6">
+                <div className="relative w-16 h-16 md:w-20 md:h-20 mb-4 shrink-0">
                   <div className="absolute inset-0 bg-red-500/20 rounded-full animate-ping opacity-75"></div>
                   <div className="relative bg-red-500/30 w-full h-full rounded-full flex items-center justify-center border-2 border-red-500/50">
                     <XCircle className="w-10 h-10 md:w-12 md:h-12 text-red-400" />
                   </div>
                 </div>
 
-                <h2 className="text-3xl md:text-5xl font-black text-white mb-3 md:mb-4 uppercase tracking-wider">{t.gameOver}</h2>
+                <h2 className="text-3xl md:text-4xl font-black text-white mb-3 uppercase tracking-wider">{t.gameOver}</h2>
 
-                <p className="text-slate-300 text-base md:text-xl mb-6 md:mb-8 leading-relaxed">
+                <p className="text-slate-300 text-sm md:text-base mb-4 leading-relaxed">
                   {language === 'fr'
                     ? <><span className="font-bold text-white">{rightLeader.name}</span> a régné{' '}<span className="font-bold text-yellow-400">{rightLeader.years} ans</span>, contre{' '}<span className="font-bold text-yellow-400">{leftLeader.years} ans</span>{' '}pour{' '}<span className="font-bold text-white">{leftLeader.name}</span>.</>
                     : <><span className="font-bold text-white">{rightLeader.name}</span> ruled for{' '}<span className="font-bold text-yellow-400">{rightLeader.years} years</span>, compared to{' '}<span className="font-bold text-yellow-400">{leftLeader.years} years</span>{' '}for{' '}<span className="font-bold text-white">{leftLeader.name}</span>.</>
@@ -367,35 +459,80 @@ export default function App() {
                 </p>
 
                 {rightLeader.factEn && (
-                  <div className="glass-panel w-full rounded-xl p-4 md:p-5 mb-4 border border-yellow-400/20 fact-reveal">
-                    <p className="text-[9px] md:text-xs text-yellow-400 uppercase tracking-widest font-bold mb-1.5">
+                  <div className="glass-panel w-full rounded-xl p-3 md:p-4 mb-4 border border-yellow-400/20 fact-reveal">
+                    <p className="text-[9px] md:text-xs text-yellow-400 uppercase tracking-widest font-bold mb-1">
                       {t.funFact}
                     </p>
-                    <p className="text-sm text-white/80 leading-relaxed text-left">
+                    <p className="text-xs md:text-sm text-white/80 leading-relaxed text-left">
                       {language === 'fr' ? rightLeader.factFr : rightLeader.factEn}
                     </p>
                   </div>
                 )}
 
-                <div className="glass-panel w-full rounded-2xl p-4 md:p-6 mb-6 md:mb-8 flex justify-around relative overflow-hidden bg-black/40">
+                {/* Score display */}
+                <div className="glass-panel w-full rounded-2xl p-4 mb-4 flex justify-around relative overflow-hidden bg-black/40">
                   <div className="relative z-10">
-                    <p className="text-[10px] md:text-xs text-slate-400 uppercase tracking-widest mb-1 md:mb-2 font-bold">{t.yourScore}</p>
+                    <p className="text-[10px] md:text-xs text-slate-400 uppercase tracking-widest mb-1 font-bold">{t.yourScore}</p>
                     <p className="text-4xl md:text-5xl font-black text-white">{score}</p>
                   </div>
                   <div className="w-px bg-white/10 relative z-10"></div>
                   <div className="relative z-10">
-                    <p className="text-[10px] md:text-xs text-yellow-400/80 uppercase tracking-widest mb-1 md:mb-2 font-bold">{t.highScore}</p>
+                    <p className="text-[10px] md:text-xs text-yellow-400/80 uppercase tracking-widest mb-1 font-bold">{t.highScore}</p>
                     <p className="text-4xl md:text-5xl font-black text-yellow-400">{highScore}</p>
                   </div>
                 </div>
 
-                <button
-                  onClick={initGame}
-                  className="group w-full py-4 md:py-5 bg-white text-black rounded-2xl font-black text-lg md:text-2xl uppercase tracking-wider hover:bg-slate-200 transition-all active:scale-95 flex items-center justify-center gap-3 shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)]"
-                >
-                  <RotateCcw className="w-6 h-6 md:w-7 md:h-7 group-hover:-rotate-180 transition-transform duration-500" />
-                  {t.playAgain}
-                </button>
+                {/* Score submission — only when score > 0 */}
+                {score > 0 && (
+                  <div className="w-full mb-4">
+                    {submitStatus === 'idle' && (
+                      <div className="flex gap-2">
+                        <input
+                          type="text"
+                          maxLength={20}
+                          placeholder={t.enterName}
+                          value={nameInput}
+                          onChange={e => setNameInput(e.target.value)}
+                          onKeyDown={e => e.key === 'Enter' && handleSubmitScore()}
+                          className="flex-1 bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-white/30 text-sm font-medium focus:outline-none focus:border-white/50 transition-colors"
+                        />
+                        <button
+                          onClick={handleSubmitScore}
+                          disabled={!nameInput.trim()}
+                          className="px-5 py-3 bg-yellow-400 text-black rounded-xl font-black text-sm uppercase tracking-wider hover:bg-yellow-300 transition-all active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed"
+                        >
+                          {t.submitScore}
+                        </button>
+                      </div>
+                    )}
+                    {submitStatus === 'submitting' && (
+                      <div className="text-center text-slate-400 text-sm py-2">{t.submitting}</div>
+                    )}
+                    {submitStatus === 'submitted' && (
+                      <div className="text-center text-green-400 font-bold text-sm py-2">{t.submitted}</div>
+                    )}
+                  </div>
+                )}
+
+                {/* Action buttons */}
+                <div className="flex gap-3 w-full">
+                  <button
+                    onClick={initGame}
+                    className="group flex-1 py-3.5 bg-white text-black rounded-2xl font-black text-base uppercase tracking-wider hover:bg-slate-200 transition-all active:scale-95 flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(255,255,255,0.2)]"
+                  >
+                    <RotateCcw className="w-5 h-5 group-hover:-rotate-180 transition-transform duration-500" />
+                    {t.playAgain}
+                  </button>
+
+                  <button
+                    onClick={openLeaderboard}
+                    className="flex-1 py-3.5 glass-panel text-white/70 rounded-2xl font-bold text-base uppercase tracking-wider hover:text-white hover:bg-white/10 transition-all active:scale-95 flex items-center justify-center gap-2"
+                  >
+                    <Medal className="w-5 h-5 text-yellow-400" />
+                    {t.leaderboard}
+                  </button>
+                </div>
+
               </div>
             </div>
           )}
