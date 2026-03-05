@@ -265,7 +265,7 @@ export default function App() {
                     <span className={`w-8 text-center font-black text-base ${i === 0 ? 'text-yellow-400' : i === 1 ? 'text-slate-300' : i === 2 ? 'text-amber-600' : 'text-slate-500'}`}>
                       {i + 1}
                     </span>
-                    <span className="flex-1 text-left ml-3 font-semibold truncate">{entry.name}</span>
+                    <span className="flex-1 text-left ml-3 font-semibold truncate capitalize">{entry.name}</span>
                     <span className="w-16 text-right font-black text-lg text-white">{entry.score}</span>
                   </div>
                 ))
