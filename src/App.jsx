@@ -77,7 +77,7 @@ export default function App() {
     const trimmed = nameInput.trim();
     if (!trimmed || submitStatus !== 'idle') return;
     setSubmitStatus('submitting');
-    const { error } = await supabase.from('scores').insert({ name: trimmed, score });
+    const { error } = await supabase.rpc('submit_score', { p_name: trimmed, p_score: score });
     if (!error) {
       localStorage.setItem('rs_name', trimmed);
       setSubmitStatus('submitted');
