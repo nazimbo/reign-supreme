@@ -92,6 +92,7 @@ export default function App() {
     if (!error) {
       localStorage.setItem('rs_name', trimmed);
       setSubmitStatus('submitted');
+      if (gameState === 'leaderboard') fetchTopScores();
     } else {
       setSubmitStatus('idle');
     }
@@ -270,6 +271,43 @@ export default function App() {
           <div className="relative z-10 flex flex-col items-center text-center max-w-lg w-full">
             <Trophy className="w-12 h-12 text-yellow-400 mb-3 drop-shadow-[0_0_20px_rgba(250,204,21,0.6)]" />
             <h2 className="text-3xl md:text-5xl font-black uppercase tracking-wider mb-6">{t.leaderboard}</h2>
+
+            {score > 0 && submitStatus !== 'submitted' && (
+              <div className="glass-panel w-full rounded-2xl p-4 mb-4 flex flex-col gap-3">
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-slate-300">{t.yourScore}</span>
+                  <span className="text-2xl font-black text-white">{score}</span>
+                </div>
+                {submitStatus === 'idle' && (
+                  <div className="flex flex-col gap-1.5">
+                    <div className="flex gap-2">
+                      <input
+                        type="text"
+                        maxLength={20}
+                        placeholder={t.enterName}
+                        value={nameInput}
+                        onChange={e => setNameInput(e.target.value)}
+                        onKeyDown={e => e.key === 'Enter' && handleSubmitScore()}
+                        className={`flex-1 bg-white/10 border rounded-xl px-4 py-3 text-white placeholder-white/30 text-sm font-medium focus:outline-none focus:border-white/50 transition-colors ${nameInput.length > 0 && !nameInput.trim() ? 'border-red-500/60' : 'border-white/20'}`}
+                      />
+                      <button
+                        onClick={handleSubmitScore}
+                        disabled={!nameInput.trim()}
+                        className="px-5 py-3 bg-yellow-400 text-black rounded-xl font-black text-sm uppercase tracking-wider hover:bg-yellow-300 transition-all active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed"
+                      >
+                        {t.submitScore}
+                      </button>
+                    </div>
+                    {nameInput.length > 0 && (
+                      <p className="text-right text-xs text-white/30">{nameInput.length}/20</p>
+                    )}
+                  </div>
+                )}
+                {submitStatus === 'submitting' && (
+                  <div className="text-center text-slate-400 text-sm py-1">{t.submitting}</div>
+                )}
+              </div>
+            )}
 
             <div className="glass-panel rounded-2xl w-full overflow-hidden mb-6">
               {/* Table header */}
@@ -523,23 +561,28 @@ export default function App() {
                 {score > 0 && (
                   <div className="w-full mb-4">
                     {submitStatus === 'idle' && (
-                      <div className="flex gap-2">
-                        <input
-                          type="text"
-                          maxLength={20}
-                          placeholder={t.enterName}
-                          value={nameInput}
-                          onChange={e => setNameInput(e.target.value)}
-                          onKeyDown={e => e.key === 'Enter' && handleSubmitScore()}
-                          className="flex-1 bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-white/30 text-sm font-medium focus:outline-none focus:border-white/50 transition-colors"
-                        />
-                        <button
-                          onClick={handleSubmitScore}
-                          disabled={!nameInput.trim()}
-                          className="px-5 py-3 bg-yellow-400 text-black rounded-xl font-black text-sm uppercase tracking-wider hover:bg-yellow-300 transition-all active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed"
-                        >
-                          {t.submitScore}
-                        </button>
+                      <div className="flex flex-col gap-1.5">
+                        <div className="flex gap-2">
+                          <input
+                            type="text"
+                            maxLength={20}
+                            placeholder={t.enterName}
+                            value={nameInput}
+                            onChange={e => setNameInput(e.target.value)}
+                            onKeyDown={e => e.key === 'Enter' && handleSubmitScore()}
+                            className={`flex-1 bg-white/10 border rounded-xl px-4 py-3 text-white placeholder-white/30 text-sm font-medium focus:outline-none focus:border-white/50 transition-colors ${nameInput.length > 0 && !nameInput.trim() ? 'border-red-500/60' : 'border-white/20'}`}
+                          />
+                          <button
+                            onClick={handleSubmitScore}
+                            disabled={!nameInput.trim()}
+                            className="px-5 py-3 bg-yellow-400 text-black rounded-xl font-black text-sm uppercase tracking-wider hover:bg-yellow-300 transition-all active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed"
+                          >
+                            {t.submitScore}
+                          </button>
+                        </div>
+                        {nameInput.length > 0 && (
+                          <p className="text-right text-xs text-white/30">{nameInput.length}/20</p>
+                        )}
                       </div>
                     )}
                     {submitStatus === 'submitting' && (
