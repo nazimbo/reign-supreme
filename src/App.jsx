@@ -441,11 +441,11 @@ export default function App() {
 
             <div className="z-10 flex flex-col items-center text-center w-full max-w-xl mt-4 md:mt-0">
               <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black mb-1 md:mb-2 drop-shadow-2xl leading-tight line-clamp-2 px-2">{rightLeader.name}</h2>
-              <p className={`text-sm sm:text-base md:text-2xl text-white/80 font-semibold tracking-widest uppercase drop-shadow-md ${gameState === 'correct' && showFunFacts && rightLeader.factEn ? 'mb-2 md:mb-8' : 'mb-4 md:mb-8'}`}>{rightLeader.country}</p>
+              <p className="text-sm sm:text-base md:text-2xl text-white/80 font-semibold tracking-widest uppercase mb-4 md:mb-8 drop-shadow-md">{rightLeader.country}</p>
 
-              <p className={`text-xs md:text-lg text-slate-200 uppercase tracking-wider font-medium ${gameState === 'correct' && showFunFacts && rightLeader.factEn ? 'mb-2 md:mb-4' : 'mb-3 md:mb-4'}`}>{t.ruled}</p>
+              <p className="text-xs md:text-lg text-slate-200 uppercase tracking-wider font-medium mb-3 md:mb-4">{t.ruled}</p>
 
-              <div className={`w-full md:h-64 flex flex-col items-center justify-center ${gameState === 'playing' ? 'h-32' : 'h-auto py-3 md:py-0'}`}>
+              <div className="w-full h-32 md:h-64 flex flex-col items-center justify-center">
                 {gameState === 'playing' && (
                   <div className="flex flex-row md:flex-col gap-3 md:gap-4 w-full max-w-[90%] md:max-w-xs animate-in fade-in slide-in-from-bottom-4 duration-500">
                     <button
@@ -486,11 +486,11 @@ export default function App() {
               </div>
 
               {gameState === 'correct' && showFunFacts && rightLeader.factEn && (
-                <div className="fact-reveal glass-panel mt-3 md:mt-4 px-4 py-3 md:px-5 md:py-4 rounded-xl max-w-sm w-full">
-                  <p className="text-[9px] md:text-xs text-yellow-400 uppercase tracking-widest font-bold mb-1">
+                <div className="hidden md:block fact-reveal glass-panel mt-4 px-5 py-4 rounded-xl max-w-sm w-full">
+                  <p className="text-xs text-yellow-400 uppercase tracking-widest font-bold mb-1">
                     {t.funFact}
                   </p>
-                  <p className="text-xs md:text-sm text-white/90 leading-relaxed text-left">
+                  <p className="text-sm text-white/90 leading-relaxed text-left">
                     {language === 'fr' ? rightLeader.factFr : rightLeader.factEn}
                   </p>
                 </div>
@@ -499,10 +499,10 @@ export default function App() {
               {gameState === 'correct' && showFunFacts && rightLeader.factEn && (
                 <button
                   onClick={advanceRound}
-                  className="fact-reveal mt-3 md:mt-4 group relative overflow-hidden glass-panel hover:bg-white/20 text-white font-bold py-3 md:py-4 px-6 rounded-2xl transition-all duration-300 transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2 border-2 border-transparent hover:border-white/50 max-w-sm w-full"
+                  className="hidden md:flex fact-reveal mt-4 group relative overflow-hidden glass-panel hover:bg-white/20 text-white font-bold py-4 px-6 rounded-2xl transition-all duration-300 transform hover:scale-105 active:scale-95 items-center justify-center gap-2 border-2 border-transparent hover:border-white/50 max-w-sm w-full"
                 >
-                  <span className="text-base md:text-lg uppercase tracking-wider">{t.continue}</span>
-                  <ChevronDown className="w-5 h-5 md:w-6 md:h-6 text-green-400 rotate-[-90deg] group-hover:translate-x-1 transition-transform" />
+                  <span className="text-lg uppercase tracking-wider">{t.continue}</span>
+                  <ChevronDown className="w-6 h-6 text-green-400 rotate-[-90deg] group-hover:translate-x-1 transition-transform" />
                 </button>
               )}
 
@@ -511,6 +511,25 @@ export default function App() {
               </p>
             </div>
           </div>
+
+          {/* Mobile fun fact bottom sheet */}
+          {gameState === 'correct' && showFunFacts && rightLeader.factEn && (
+            <div className="md:hidden fact-reveal absolute bottom-0 left-0 right-0 z-40 p-3 pb-5 flex flex-col gap-2 bg-gradient-to-t from-black/80 to-transparent">
+              <div className="glass-panel px-4 py-3 rounded-xl w-full">
+                <p className="text-[9px] text-yellow-400 uppercase tracking-widest font-bold mb-1">{t.funFact}</p>
+                <p className="text-xs text-white/90 leading-relaxed text-left">
+                  {language === 'fr' ? rightLeader.factFr : rightLeader.factEn}
+                </p>
+              </div>
+              <button
+                onClick={advanceRound}
+                className="group relative overflow-hidden glass-panel hover:bg-white/20 text-white font-bold py-3 px-6 rounded-2xl transition-all duration-300 active:scale-95 flex items-center justify-center gap-2 border-2 border-transparent w-full"
+              >
+                <span className="text-base uppercase tracking-wider">{t.continue}</span>
+                <ChevronDown className="w-5 h-5 text-green-400 rotate-[-90deg] group-hover:translate-x-1 transition-transform" />
+              </button>
+            </div>
+          )}
 
           {/* Game over screen */}
           {gameState === 'gameover' && (
