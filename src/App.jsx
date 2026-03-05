@@ -211,7 +211,10 @@ export default function App() {
             </p>
 
             <div className="glass-panel rounded-2xl px-6 py-5 mb-8 w-full">
-              <p className="text-slate-300 text-sm md:text-base leading-relaxed">
+              <p className="text-slate-300 text-sm md:text-base leading-relaxed md:hidden">
+                {t.menuHowToMobile}
+              </p>
+              <p className="text-slate-300 text-sm md:text-base leading-relaxed hidden md:block">
                 {t.menuHowTo}
               </p>
             </div>
