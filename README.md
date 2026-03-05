@@ -6,14 +6,23 @@ A higher/lower guessing game about world leaders and how long they ruled.
 
 Two leaders are shown side by side. One has their reign duration revealed — guess whether the challenger ruled for **longer** or **shorter**. Each correct answer advances the streak. The game ends on the first mistake.
 
-A historical fun fact is revealed after each correct answer, and again in the game over screen.
+A historical fun fact is revealed after each correct answer and on the game over screen (can be toggled off from the menu).
+
+## Features
+
+- **Global leaderboard** — submit your score with a username after any game; scores are persisted in Supabase. The submission form also appears at the top of the leaderboard screen if you navigate there without submitting first.
+- **Score validation** — all-whitespace names are rejected (red border); a live character counter (`X/20`) is shown while typing.
+- **Fun facts toggle** — enable or disable historical facts from the main menu; preference is saved to `localStorage`.
+- **High score** — best session score persisted in `localStorage`.
+- **Portraits** — Wikipedia CDN photos where available; falls back to a per-leader colour gradient.
+- **EN / FR** — full bilingual support (UI, facts, instructions).
 
 ## Stack
 
 - **Vite** + **React 18**
 - **Tailwind CSS** for styling
 - **lucide-react** for icons
-- EN / FR language toggle
+- **Supabase** for leaderboard persistence
 
 ## Getting started
 
@@ -23,6 +32,15 @@ npm run dev
 ```
 
 Opens at `http://localhost:5173`.
+
+Create a `.env` file with your Supabase credentials:
+
+```
+VITE_SUPABASE_URL=https://your-project.supabase.co
+VITE_SUPABASE_ANON_KEY=your-anon-key
+```
+
+The leaderboard uses a `scores` table and a `submit_score(p_name, p_score)` RPC function in Supabase.
 
 ## Project structure
 
@@ -34,8 +52,9 @@ reign-supreme/
 │   ├── App.jsx        # game logic & UI
 │   ├── main.jsx       # React entry point
 │   ├── index.css      # Tailwind directives
-│   ├── leaders.json   # 71 world leaders dataset
-│   └── i18n.js        # EN / FR translations
+│   ├── leaders.json   # world leaders dataset
+│   ├── i18n.js        # EN / FR translations
+│   └── supabase.js    # Supabase client
 ├── index.html
 ├── vite.config.js
 ├── tailwind.config.js
@@ -44,7 +63,7 @@ reign-supreme/
 
 ## Dataset
 
-71 leaders from antiquity to the present, including monarchs, dictators, and elected officials. Each entry has:
+Each leader entry in `src/leaders.json`:
 
 | Field | Required | Description |
 |---|---|---|
