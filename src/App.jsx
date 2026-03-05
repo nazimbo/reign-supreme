@@ -44,6 +44,17 @@ const AnimatedNumber = ({ value, duration = 1000, onComplete }) => {
 
 export default function App() {
   const [language, setLanguage] = useState(() => localStorage.getItem('rs_lang') || 'en');
+  const [showFunFacts, setShowFunFacts] = useState(
+    () => localStorage.getItem('rs_funfacts') !== 'false'
+  );
+
+  const toggleFunFacts = () => {
+    setShowFunFacts(prev => {
+      const next = !prev;
+      localStorage.setItem('rs_funfacts', String(next));
+      return next;
+    });
+  };
   const t = translations[language];
 
   const [score, setScore] = useState(0);
@@ -114,6 +125,15 @@ export default function App() {
     setSubmitStatus('idle');
   };
 
+  const advanceRound = () => {
+    const newRightLeader = getUniqueRandomLeader(playedIds, rightLeader.id);
+    setPlayedIds(prev => [...prev, newRightLeader.id]);
+    setLeftLeader(rightLeader);
+    setRightLeader(newRightLeader);
+    setGameState('playing');
+    setFlashColor(null);
+  };
+
   const handleGuess = (guess) => {
     if (gameState !== 'playing') return;
     setGameState('revealing');
@@ -127,15 +147,10 @@ export default function App() {
         setGameState('correct');
         setFlashColor('bg-green-500/30');
         setScore(s => s + 1);
-        const correctDuration = rightLeader.factEn ? 2000 : 1200;
-        setTimeout(() => {
-          const newRightLeader = getUniqueRandomLeader(playedIds, rightLeader.id);
-          setPlayedIds(prev => [...prev, newRightLeader.id]);
-          setLeftLeader(rightLeader);
-          setRightLeader(newRightLeader);
-          setGameState('playing');
-          setFlashColor(null);
-        }, correctDuration);
+        if (!showFunFacts || !rightLeader.factEn) {
+          setTimeout(() => advanceRound(), 1200);
+        }
+        // When showFunFacts is on and there's a fact, wait for handleContinue
       } else {
         setGameState('gameover');
         setFlashColor('bg-red-500/40');
@@ -217,6 +232,15 @@ export default function App() {
               <p className="text-slate-300 text-sm md:text-base leading-relaxed hidden md:block">
                 {t.menuHowTo}
               </p>
+              <div className="flex items-center justify-between mt-3 pt-3 border-t border-white/10">
+                <span className="text-slate-300 text-sm font-medium">{t.showFunFacts}</span>
+                <button
+                  onClick={toggleFunFacts}
+                  className={`relative w-11 h-6 rounded-full transition-colors duration-300 focus:outline-none ${showFunFacts ? 'bg-yellow-400' : 'bg-white/20'}`}
+                >
+                  <span className={`absolute top-0.5 left-0.5 w-5 h-5 bg-white rounded-full shadow transition-transform duration-300 ${showFunFacts ? 'translate-x-5' : 'translate-x-0'}`} />
+                </button>
+              </div>
             </div>
 
             <button
@@ -423,7 +447,7 @@ export default function App() {
                 )}
               </div>
 
-              {gameState === 'correct' && rightLeader.factEn && (
+              {gameState === 'correct' && showFunFacts && rightLeader.factEn && (
                 <div className="fact-reveal glass-panel mt-3 md:mt-4 px-4 py-3 md:px-5 md:py-4 rounded-xl max-w-sm w-full">
                   <p className="text-[9px] md:text-xs text-yellow-400 uppercase tracking-widest font-bold mb-1">
                     {t.funFact}
@@ -432,6 +456,16 @@ export default function App() {
                     {language === 'fr' ? rightLeader.factFr : rightLeader.factEn}
                   </p>
                 </div>
+              )}
+
+              {gameState === 'correct' && showFunFacts && rightLeader.factEn && (
+                <button
+                  onClick={advanceRound}
+                  className="fact-reveal mt-3 md:mt-4 group relative overflow-hidden glass-panel hover:bg-white/20 text-white font-bold py-3 md:py-4 px-6 rounded-2xl transition-all duration-300 transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2 border-2 border-transparent hover:border-white/50 max-w-sm w-full"
+                >
+                  <span className="text-base md:text-lg uppercase tracking-wider">{t.continue}</span>
+                  <ChevronDown className="w-5 h-5 md:w-6 md:h-6 text-green-400 rotate-[-90deg] group-hover:translate-x-1 transition-transform" />
+                </button>
               )}
 
               <p className="text-xs md:text-lg text-slate-200 uppercase tracking-wider font-medium mt-3 md:mt-4">

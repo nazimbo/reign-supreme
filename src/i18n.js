@@ -27,6 +27,8 @@ export const translations = {
     submitted: 'Submitted!',
     viewLeaderboard: 'View Leaderboard',
     backToMenu: 'Menu',
+    continue: 'Continue',
+    showFunFacts: 'Fun Facts',
   },
   fr: {
     score: 'Score',
@@ -56,5 +58,7 @@ export const translations = {
     submitted: 'Envoyé\u00a0!',
     viewLeaderboard: 'Voir le classement',
     backToMenu: 'Menu',
+    continue: 'Continuer',
+    showFunFacts: 'Fun Facts',
   },
 };
