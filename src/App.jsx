@@ -441,11 +441,11 @@ export default function App() {
 
             <div className="z-10 flex flex-col items-center text-center w-full max-w-xl mt-4 md:mt-0">
               <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black mb-1 md:mb-2 drop-shadow-2xl leading-tight line-clamp-2 px-2">{rightLeader.name}</h2>
-              <p className="text-sm sm:text-base md:text-2xl text-white/80 font-semibold tracking-widest uppercase mb-4 md:mb-8 drop-shadow-md">{rightLeader.country}</p>
+              <p className={`text-sm sm:text-base md:text-2xl text-white/80 font-semibold tracking-widest uppercase drop-shadow-md ${gameState === 'correct' && showFunFacts && rightLeader.factEn ? 'mb-2 md:mb-8' : 'mb-4 md:mb-8'}`}>{rightLeader.country}</p>
 
-              <p className="text-xs md:text-lg text-slate-200 uppercase tracking-wider font-medium mb-3 md:mb-4">{t.ruled}</p>
+              <p className={`text-xs md:text-lg text-slate-200 uppercase tracking-wider font-medium ${gameState === 'correct' && showFunFacts && rightLeader.factEn ? 'mb-2 md:mb-4' : 'mb-3 md:mb-4'}`}>{t.ruled}</p>
 
-              <div className="w-full h-32 md:h-64 flex flex-col items-center justify-center">
+              <div className={`w-full md:h-64 flex flex-col items-center justify-center ${gameState === 'playing' ? 'h-32' : 'h-auto py-3 md:py-0'}`}>
                 {gameState === 'playing' && (
                   <div className="flex flex-row md:flex-col gap-3 md:gap-4 w-full max-w-[90%] md:max-w-xs animate-in fade-in slide-in-from-bottom-4 duration-500">
                     <button
