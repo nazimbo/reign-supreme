@@ -637,5 +637,14 @@
     "photo": "/leaders/71.jpg",
     "factEn": "He was also a gifted poet who wrote under the pen name 'Muhibbi,' composing over 3,000 couplets of Persian and Turkish verse.",
     "factFr": "Il était aussi un poète talentueux qui écrivait sous le pseudonyme 'Muhibbi', composant plus de 3 000 distiques de poésie persane et turque."
+  },
+  {
+    "id": 72,
+    "name": "Abdelaziz Bouteflika",
+    "country": "Algeria",
+    "years": 20,
+    "photo": "/leaders/72.jpg",
+    "factEn": "He ran for a controversial fourth term in 2019 while rarely appearing in public due to illness, sparking mass protests known as the Hirak movement that ultimately forced his resignation.",
+    "factFr": "Sa candidature à un quatrième mandat controversé en 2019 malgré sa maladie a déclenché le mouvement de contestation populaire Hirak, qui a finalement contraint à sa démission."
   }
 ]
