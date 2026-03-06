@@ -439,7 +439,7 @@ export default function App() {
             )}
             <div className={`absolute inset-0 ${hasRightPhoto ? 'bg-black/55' : 'bg-black/30'}`}></div>
 
-            <div className="z-10 flex flex-col items-center text-center w-full max-w-xl mt-4 md:mt-0">
+            <div className="z-30 flex flex-col items-center text-center w-full max-w-xl mt-4 md:mt-0">
               <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black mb-1 md:mb-2 drop-shadow-2xl leading-tight line-clamp-2 px-2">{rightLeader.name}</h2>
               <p className="text-sm sm:text-base md:text-2xl text-white/80 font-semibold tracking-widest uppercase mb-4 md:mb-8 drop-shadow-md">{rightLeader.country}</p>
 
