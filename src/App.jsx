@@ -201,63 +201,65 @@ export default function App() {
 
       {/* ===== START MENU ===== */}
       {gameState === 'menu' && (
-        <div className="absolute inset-0 z-50 flex flex-col items-center justify-center p-8">
+        <div className="absolute inset-0 z-50 overflow-y-auto">
           {/* Decorative split background */}
-          <div className="absolute inset-0 flex pointer-events-none overflow-hidden">
+          <div className="fixed inset-0 flex pointer-events-none overflow-hidden">
             <div className="flex-1 bg-gradient-to-br from-blue-900/50 to-indigo-950"></div>
             <div className="flex-1 bg-gradient-to-br from-purple-900/50 to-rose-950"></div>
           </div>
-          <div className="absolute inset-0 bg-black/65 backdrop-blur-sm"></div>
+          <div className="fixed inset-0 bg-black/65 backdrop-blur-sm"></div>
 
           {/* Language toggle */}
-          <div className="absolute top-4 right-4 md:top-5 md:right-5 z-10 flex gap-1 glass-panel rounded-xl p-1">
+          <div className="fixed top-4 right-4 md:top-5 md:right-5 z-10 flex gap-1 glass-panel rounded-xl p-1">
             <LangButtons size="lg" />
           </div>
 
           {/* Content */}
-          <div className="relative z-10 flex flex-col items-center text-center max-w-lg w-full">
-            <Trophy className="w-14 h-14 md:w-20 md:h-20 text-yellow-400 mb-5 drop-shadow-[0_0_25px_rgba(250,204,21,0.7)]" />
+          <div className="relative z-10 min-h-full flex flex-col items-center justify-center p-6 sm:p-8 py-16">
+            <div className="flex flex-col items-center text-center max-w-lg w-full">
+              <Trophy className="w-12 h-12 sm:w-14 sm:h-14 md:w-20 md:h-20 text-yellow-400 mb-4 md:mb-5 drop-shadow-[0_0_25px_rgba(250,204,21,0.7)]" />
 
-            <h1 className="text-5xl sm:text-7xl md:text-8xl font-black text-white uppercase tracking-tighter leading-none mb-3 drop-shadow-2xl">
-              Reign<br />Supreme
-            </h1>
+              <h1 className="text-5xl sm:text-7xl md:text-8xl font-black text-white uppercase tracking-tighter leading-none mb-3 drop-shadow-2xl">
+                Reign<br />Supreme
+              </h1>
 
-            <p className="text-lg md:text-2xl text-yellow-400 font-semibold mb-8 drop-shadow-md">
-              {t.menuSubtitle}
-            </p>
-
-            <div className="glass-panel rounded-2xl px-6 py-5 mb-8 w-full">
-              <p className="text-slate-300 text-sm md:text-base leading-relaxed md:hidden">
-                {t.menuHowToMobile}
+              <p className="text-lg md:text-2xl text-yellow-400 font-semibold mb-5 md:mb-8 drop-shadow-md">
+                {t.menuSubtitle}
               </p>
-              <p className="text-slate-300 text-sm md:text-base leading-relaxed hidden md:block">
-                {t.menuHowTo}
-              </p>
-              <div className="flex items-center justify-between mt-3 pt-3 border-t border-white/10">
-                <span className="text-slate-300 text-sm font-medium">{t.showFunFacts}</span>
-                <button
-                  onClick={toggleFunFacts}
-                  className={`relative w-11 h-6 rounded-full transition-colors duration-300 focus:outline-none ${showFunFacts ? 'bg-yellow-400' : 'bg-white/20'}`}
-                >
-                  <span className={`absolute top-0.5 left-0.5 w-5 h-5 bg-white rounded-full shadow transition-transform duration-300 ${showFunFacts ? 'translate-x-5' : 'translate-x-0'}`} />
-                </button>
+
+              <div className="glass-panel rounded-2xl px-6 py-4 md:py-5 mb-5 md:mb-8 w-full">
+                <p className="text-slate-300 text-sm md:text-base leading-relaxed md:hidden">
+                  {t.menuHowToMobile}
+                </p>
+                <p className="text-slate-300 text-sm md:text-base leading-relaxed hidden md:block">
+                  {t.menuHowTo}
+                </p>
+                <div className="flex items-center justify-between mt-3 pt-3 border-t border-white/10">
+                  <span className="text-slate-300 text-sm font-medium">{t.showFunFacts}</span>
+                  <button
+                    onClick={toggleFunFacts}
+                    className={`relative w-11 h-6 rounded-full transition-colors duration-300 focus:outline-none ${showFunFacts ? 'bg-yellow-400' : 'bg-white/20'}`}
+                  >
+                    <span className={`absolute top-0.5 left-0.5 w-5 h-5 bg-white rounded-full shadow transition-transform duration-300 ${showFunFacts ? 'translate-x-5' : 'translate-x-0'}`} />
+                  </button>
+                </div>
               </div>
+
+              <button
+                onClick={initGame}
+                className="w-full max-w-xs py-4 md:py-5 bg-white text-black rounded-2xl font-black text-xl md:text-2xl uppercase tracking-wider hover:bg-yellow-400 transition-all duration-300 active:scale-95 shadow-[0_0_30px_rgba(255,255,255,0.2)] hover:shadow-[0_0_40px_rgba(250,204,21,0.5)] mb-3"
+              >
+                {t.play}
+              </button>
+
+              <button
+                onClick={openLeaderboard}
+                className="w-full max-w-xs py-3 glass-panel text-white/70 rounded-2xl font-bold text-base uppercase tracking-wider hover:text-white hover:bg-white/10 transition-all duration-300 active:scale-95 flex items-center justify-center gap-2"
+              >
+                <Medal className="w-5 h-5 text-yellow-400" />
+                {t.leaderboard}
+              </button>
             </div>
-
-            <button
-              onClick={initGame}
-              className="w-full max-w-xs py-4 md:py-5 bg-white text-black rounded-2xl font-black text-xl md:text-2xl uppercase tracking-wider hover:bg-yellow-400 transition-all duration-300 active:scale-95 shadow-[0_0_30px_rgba(255,255,255,0.2)] hover:shadow-[0_0_40px_rgba(250,204,21,0.5)] mb-3"
-            >
-              {t.play}
-            </button>
-
-            <button
-              onClick={openLeaderboard}
-              className="w-full max-w-xs py-3 glass-panel text-white/70 rounded-2xl font-bold text-base uppercase tracking-wider hover:text-white hover:bg-white/10 transition-all duration-300 active:scale-95 flex items-center justify-center gap-2"
-            >
-              <Medal className="w-5 h-5 text-yellow-400" />
-              {t.leaderboard}
-            </button>
           </div>
         </div>
       )}
