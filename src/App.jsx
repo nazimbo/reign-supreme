@@ -266,11 +266,12 @@ export default function App() {
 
       {/* ===== LEADERBOARD ===== */}
       {gameState === 'leaderboard' && (
-        <div className="absolute inset-0 z-50 flex flex-col items-center justify-center p-4 md:p-8">
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-900 to-black"></div>
-          <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+        <div className="absolute inset-0 z-50 overflow-y-auto">
+          <div className="fixed inset-0 bg-gradient-to-br from-slate-900 to-black"></div>
+          <div className="fixed inset-0 bg-black/50 backdrop-blur-sm"></div>
 
-          <div className="relative z-10 flex flex-col items-center text-center max-w-lg w-full">
+          <div className="relative z-10 min-h-full flex flex-col items-center justify-center p-4 md:p-8 py-10">
+          <div className="flex flex-col items-center text-center max-w-lg w-full">
             <Trophy className="w-12 h-12 text-yellow-400 mb-3 drop-shadow-[0_0_20px_rgba(250,204,21,0.6)]" />
             <h2 className="text-3xl md:text-5xl font-black uppercase tracking-wider mb-6">{t.leaderboard}</h2>
 
@@ -345,6 +346,7 @@ export default function App() {
             >
               {t.backToMenu}
             </button>
+          </div>
           </div>
         </div>
       )}
