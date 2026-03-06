@@ -210,7 +210,7 @@ export default function App() {
           <div className="fixed inset-0 bg-black/65 backdrop-blur-sm"></div>
 
           {/* Language toggle */}
-          <div className="fixed top-4 right-4 md:top-5 md:right-5 z-10 flex gap-1 glass-panel rounded-xl p-1">
+          <div className="fixed top-4 right-4 md:top-5 md:right-5 z-20 flex gap-1 glass-panel rounded-xl p-1">
             <LangButtons size="lg" />
           </div>
 
