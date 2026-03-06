@@ -355,7 +355,7 @@ export default function App() {
       {gameState !== 'menu' && gameState !== 'leaderboard' && leftLeader && rightLeader && (
         <>
           {/* Score bar — single centered pill */}
-          <div className="absolute top-0 left-0 right-0 z-30 flex justify-center p-3 md:p-4 pointer-events-none">
+          <div className="absolute top-0 left-0 right-0 z-40 flex justify-center p-3 md:p-4 pointer-events-none">
             <div className="glass-panel rounded-2xl px-4 md:px-5 py-2 md:py-2.5 flex items-center gap-3 md:gap-4 shadow-xl">
 
               {/* Score */}
