@@ -646,5 +646,257 @@
     "photo": "/leaders/72.jpg",
     "factEn": "He ran for a controversial fourth term in 2019 while rarely appearing in public due to illness, sparking mass protests known as the Hirak movement that ultimately forced his resignation.",
     "factFr": "Sa candidature à un quatrième mandat controversé en 2019 malgré sa maladie a déclenché le mouvement de contestation populaire Hirak, qui a finalement contraint à sa démission."
+  },
+  {
+    "id": 73,
+    "name": "Genghis Khan",
+    "country": "Mongol Empire",
+    "years": 21,
+    "photo": "/leaders/73.jpg",
+    "factEn": "He created the largest contiguous land empire in history, stretching from China to Eastern Europe — about 24 million km².",
+    "factFr": "Il créa le plus grand empire terrestre contigu de l'histoire, s'étendant de la Chine à l'Europe de l'Est — environ 24 millions de km²."
+  },
+  {
+    "id": 74,
+    "name": "Cleopatra VII",
+    "country": "Ancient Egypt",
+    "years": 21,
+    "photo": "/leaders/74.jpg",
+    "factEn": "She spoke nine languages and was the first Ptolemaic ruler to learn Egyptian — her dynasty had spoken only Greek for 300 years.",
+    "factFr": "Elle parlait neuf langues et fut la première souveraine ptolémaïque à apprendre l'égyptien — sa dynastie n'avait parlé que le grec pendant 300 ans."
+  },
+  {
+    "id": 75,
+    "name": "Charlemagne",
+    "country": "Frankish Empire",
+    "years": 46,
+    "photo": "/leaders/75.jpg",
+    "factEn": "Despite being called the 'Father of Europe' and promoting education, he himself never fully learned to write.",
+    "factFr": "Bien qu'il soit surnommé le 'Père de l'Europe' et ait promu l'éducation, il n'apprit jamais complètement à écrire."
+  },
+  {
+    "id": 76,
+    "name": "Akbar the Great",
+    "country": "Mughal Empire",
+    "years": 49,
+    "photo": "/leaders/76.jpg",
+    "factEn": "Despite being illiterate, he built one of the largest libraries in the world with over 24,000 volumes and had books read to him daily.",
+    "factFr": "Bien qu'il fût analphabète, il constitua l'une des plus grandes bibliothèques au monde avec plus de 24 000 volumes et se faisait lire des livres chaque jour."
+  },
+  {
+    "id": 77,
+    "name": "Kangxi Emperor",
+    "country": "China",
+    "years": 61,
+    "photo": "/leaders/77.jpg",
+    "factEn": "He ascended the throne at age 7 and became the longest-reigning Chinese emperor, ruling the Qing dynasty for 61 years.",
+    "factFr": "Il monta sur le trône à l'âge de 7 ans et devint l'empereur chinois au règne le plus long, dirigeant la dynastie Qing pendant 61 ans."
+  },
+  {
+    "id": 78,
+    "name": "Qin Shi Huang",
+    "country": "China",
+    "years": 11,
+    "photo": "/leaders/78.png",
+    "factEn": "He unified China, built the first Great Wall, and was buried with an army of 8,000 terracotta soldiers to protect him in the afterlife.",
+    "factFr": "Il unifia la Chine, construisit la première Grande Muraille et fut enterré avec une armée de 8 000 soldats en terre cuite pour le protéger dans l'au-delà."
+  },
+  {
+    "id": 79,
+    "name": "Indira Gandhi",
+    "country": "India",
+    "years": 15,
+    "photo": "/leaders/79.png",
+    "factEn": "She was no relation to Mahatma Gandhi — her surname came from her husband Feroze Gandhi, who was of Parsi heritage.",
+    "factFr": "Elle n'avait aucun lien de parenté avec le Mahatma Gandhi — son nom de famille venait de son mari Feroze Gandhi, d'origine parsie."
+  },
+  {
+    "id": 80,
+    "name": "Jawaharlal Nehru",
+    "country": "India",
+    "years": 17,
+    "photo": "/leaders/80.jpg",
+    "factEn": "He spent a total of nine years in British prisons, where he wrote most of his major literary works including 'The Discovery of India.'",
+    "factFr": "Il passa au total neuf ans dans les prisons britanniques, où il écrivit la plupart de ses œuvres littéraires majeures dont 'La Découverte de l'Inde'."
+  },
+  {
+    "id": 81,
+    "name": "Kwame Nkrumah",
+    "country": "Ghana",
+    "years": 9,
+    "photo": "/leaders/81.jpg",
+    "factEn": "He led Ghana to become the first sub-Saharan African country to gain independence from colonial rule in 1957.",
+    "factFr": "Il mena le Ghana à devenir le premier pays d'Afrique subsaharienne à obtenir son indépendance de la domination coloniale en 1957."
+  },
+  {
+    "id": 82,
+    "name": "Patrice Lumumba",
+    "country": "Congo",
+    "years": 1,
+    "photo": "/leaders/82.jpg",
+    "factEn": "He served as prime minister for only 81 days before being overthrown and assassinated with the alleged involvement of the CIA and Belgian intelligence.",
+    "factFr": "Il ne fut Premier ministre que 81 jours avant d'être renversé et assassiné avec la complication présumée de la CIA et des services de renseignement belges."
+  },
+  {
+    "id": 83,
+    "name": "Ernesto 'Che' Guevara",
+    "country": "Cuba",
+    "years": 2,
+    "photo": "/leaders/83.jpg",
+    "factEn": "He was an Argentine doctor who became Cuba's central bank president — he allegedly signed banknotes simply 'Che' as a joke mocking capitalism.",
+    "factFr": "Il était un médecin argentin devenu président de la banque centrale de Cuba — il aurait signé les billets simplement 'Che' pour se moquer du capitalisme."
+  },
+  {
+    "id": 84,
+    "name": "Mahatma Gandhi",
+    "country": "India",
+    "years": 0,
+    "photo": "/leaders/84.jpg",
+    "factEn": "Though never holding political office, he led India to independence through nonviolent civil disobedience, inspiring movements worldwide.",
+    "factFr": "Bien qu'il n'ait jamais occupé de fonction politique, il mena l'Inde à l'indépendance par la désobéissance civile non-violente, inspirant des mouvements dans le monde entier."
+  },
+  {
+    "id": 85,
+    "name": "Tokugawa Ieyasu",
+    "country": "Japan",
+    "years": 2,
+    "photo": "/leaders/85.jpg",
+    "factEn": "He founded the Tokugawa shogunate that ruled Japan for over 250 years of peace — the longest period of stability in Japanese history.",
+    "factFr": "Il fonda le shogunat Tokugawa qui dirigea le Japon pendant plus de 250 ans de paix — la plus longue période de stabilité de l'histoire japonaise."
+  },
+  {
+    "id": 86,
+    "name": "Simón Bolívar",
+    "country": "Venezuela",
+    "years": 11,
+    "photo": "/leaders/86.png",
+    "factEn": "Known as 'El Libertador,' he liberated six South American nations from Spanish rule — Bolivia is named after him.",
+    "factFr": "Connu comme 'El Libertador', il libéra six nations sud-américaines de la domination espagnole — la Bolivie porte son nom."
+  },
+  {
+    "id": 87,
+    "name": "Nikita Khrushchev",
+    "country": "USSR",
+    "years": 11,
+    "photo": "/leaders/87.jpg",
+    "factEn": "He famously banged his shoe on the desk at a UN General Assembly session in 1960 to protest a speech he disagreed with.",
+    "factFr": "Il frappa célèbrement sa chaussure sur le bureau lors d'une session de l'Assemblée générale de l'ONU en 1960 pour protester contre un discours."
+  },
+  {
+    "id": 88,
+    "name": "Leonid Brezhnev",
+    "country": "USSR",
+    "years": 18,
+    "photo": "/leaders/88.jpg",
+    "factEn": "He was obsessed with medals and awarded himself over 100 decorations, including the Order of Victory — normally reserved for WWII commanders.",
+    "factFr": "Il était obsédé par les médailles et s'en décerna plus de 100, dont l'Ordre de la Victoire — normalement réservé aux commandants de la Seconde Guerre mondiale."
+  },
+  {
+    "id": 89,
+    "name": "Mikhail Gorbachev",
+    "country": "USSR",
+    "years": 6,
+    "photo": "/leaders/89.jpg",
+    "factEn": "After leaving office, he starred in a Pizza Hut commercial and won a Grammy Award for a spoken-word children's album.",
+    "factFr": "Après avoir quitté le pouvoir, il apparut dans une publicité Pizza Hut et remporta un Grammy Award pour un album parlé pour enfants."
+  },
+  {
+    "id": 90,
+    "name": "Thomas Sankara",
+    "country": "Burkina Faso",
+    "years": 4,
+    "photo": "/leaders/90.png",
+    "factEn": "Known as 'Africa's Che Guevara,' he renamed Upper Volta to Burkina Faso ('Land of Upright People') and sold the government's fleet of Mercedes, replacing them with Renault 5s.",
+    "factFr": "Surnommé le 'Che Guevara africain', il rebaptisa la Haute-Volta en Burkina Faso ('Pays des Hommes intègres') et vendit la flotte de Mercedes du gouvernement pour les remplacer par des Renault 5."
+  },
+  {
+    "id": 91,
+    "name": "Yasser Arafat",
+    "country": "Palestine",
+    "years": 35,
+    "photo": "/leaders/91.jpg",
+    "factEn": "He wore his signature keffiyeh draped in the shape of historic Palestine and reportedly never appeared in public without it.",
+    "factFr": "Il portait son keffieh signature drapé en forme de la Palestine historique et ne serait jamais apparu en public sans."
+  },
+  {
+    "id": 92,
+    "name": "Deng Xiaoping",
+    "country": "China",
+    "years": 11,
+    "photo": "/leaders/92.jpg",
+    "factEn": "He opened China's economy with the famous phrase 'It doesn't matter if a cat is black or white, so long as it catches mice.'",
+    "factFr": "Il ouvrit l'économie chinoise avec sa célèbre phrase 'Peu importe qu'un chat soit noir ou blanc, pourvu qu'il attrape les souris.'"
+  },
+  {
+    "id": 93,
+    "name": "Xi Jinping",
+    "country": "China",
+    "years": 13,
+    "photo": "/leaders/93.jpg",
+    "factEn": "During the Cultural Revolution, he was sent to rural Shaanxi province at age 15 to work as a farmer for seven years.",
+    "factFr": "Pendant la Révolution culturelle, il fut envoyé dans la province rurale du Shaanxi à 15 ans pour travailler comme fermier pendant sept ans."
+  },
+  {
+    "id": 94,
+    "name": "Lech Wałęsa",
+    "country": "Poland",
+    "years": 5,
+    "photo": "/leaders/94.jpg",
+    "factEn": "He was an electrician at a Gdańsk shipyard who led the Solidarity movement and won the Nobel Peace Prize before becoming president.",
+    "factFr": "Il était électricien dans un chantier naval de Gdańsk, mena le mouvement Solidarité et reçut le prix Nobel de la Paix avant de devenir président."
+  },
+  {
+    "id": 95,
+    "name": "Vaclav Havel",
+    "country": "Czech Republic",
+    "years": 13,
+    "photo": "/leaders/95.jpg",
+    "factEn": "He went from being a banned playwright and political prisoner to becoming the first president of the Czech Republic in just six weeks.",
+    "factFr": "Il passa de dramaturge interdit et prisonnier politique à premier président de la République tchèque en seulement six semaines."
+  },
+  {
+    "id": 96,
+    "name": "Kemal Atatürk",
+    "country": "Turkey",
+    "years": 15,
+    "photo": "/leaders/96.jpg",
+    "factEn": "He transformed Turkey from an Islamic empire into a secular republic, replacing Arabic script with Latin letters overnight.",
+    "factFr": "Il transforma la Turquie d'un empire islamique en une république laïque, remplaçant l'écriture arabe par les lettres latines du jour au lendemain."
+  },
+  {
+    "id": 97,
+    "name": "Tsar Nicholas II",
+    "country": "Russia",
+    "years": 22,
+    "photo": "/leaders/97.jpg",
+    "factEn": "He was Queen Victoria's grandson-in-law and looked so similar to his cousin King George V that the two were often mistaken for twins.",
+    "factFr": "Il était le petit-fils par alliance de la reine Victoria et ressemblait tellement à son cousin le roi George V qu'on les prenait souvent pour des jumeaux."
+  },
+  {
+    "id": 98,
+    "name": "Otto von Bismarck",
+    "country": "Germany",
+    "years": 28,
+    "photo": "/leaders/98.jpg",
+    "factEn": "He unified Germany through 'blood and iron' diplomacy and invented the modern welfare state — creating the world's first public health insurance system.",
+    "factFr": "Il unifia l'Allemagne par la diplomatie du 'fer et du sang' et inventa l'État-providence moderne — créant le premier système public d'assurance maladie au monde."
+  },
+  {
+    "id": 99,
+    "name": "Leopold II",
+    "country": "Belgium",
+    "years": 44,
+    "photo": "/leaders/99.jpg",
+    "factEn": "He personally owned the Congo Free State as private property — an area 76 times the size of Belgium — exploiting it for rubber and ivory.",
+    "factFr": "Il posséda personnellement l'État libre du Congo comme propriété privée — un territoire 76 fois plus grand que la Belgique — l'exploitant pour le caoutchouc et l'ivoire."
+  },
+  {
+    "id": 100,
+    "name": "Fidel Ramos",
+    "country": "Philippines",
+    "years": 6,
+    "photo": "/leaders/100.jpg",
+    "factEn": "He was a West Point graduate and the only Philippine president to have served in both the Korean and Vietnam Wars.",
+    "factFr": "Diplômé de West Point, il fut le seul président philippin à avoir servi à la fois dans les guerres de Corée et du Vietnam."
   }
 ]
