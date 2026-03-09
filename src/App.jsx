@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Trophy, ChevronUp, ChevronDown, XCircle, RotateCcw, CheckCircle, Medal } from 'lucide-react';
+import { Trophy, ChevronUp, ChevronDown, XCircle, RotateCcw, CheckCircle, Medal, Share2 } from 'lucide-react';
 import initialLeadersData from './leaders.json';
 import { translations } from './i18n';
 import { supabase } from './supabase';
@@ -70,6 +70,7 @@ export default function App() {
   // Leaderboard state
   const [nameInput, setNameInput] = useState(() => localStorage.getItem('rs_name') || '');
   const [submitStatus, setSubmitStatus] = useState('idle'); // 'idle' | 'submitting' | 'submitted'
+  const [shareStatus, setShareStatus] = useState('idle'); // 'idle' | 'copied'
   const [topScores, setTopScores] = useState([]);
   const [scoresLoading, setScoresLoading] = useState(false);
 
@@ -95,6 +96,18 @@ export default function App() {
       if (gameState === 'leaderboard') fetchTopScores();
     } else {
       setSubmitStatus('idle');
+    }
+  };
+
+  const handleShare = async () => {
+    const text = t.shareText(score);
+    const url = window.location.href;
+    if (navigator.share) {
+      try { await navigator.share({ text, url }); } catch (_) {}
+    } else {
+      await navigator.clipboard.writeText(`${text}\n${url}`);
+      setShareStatus('copied');
+      setTimeout(() => setShareStatus('idle'), 2500);
     }
   };
 
@@ -124,6 +137,7 @@ export default function App() {
     setGameState('playing');
     setFlashColor(null);
     setSubmitStatus('idle');
+    setShareStatus('idle');
   };
 
   const advanceRound = () => {
@@ -615,6 +629,26 @@ export default function App() {
                       <div className="text-center text-green-400 font-bold text-sm py-2">{t.submitted}</div>
                     )}
                   </div>
+                )}
+
+                {/* Share button — only when score > 0 */}
+                {score > 0 && (
+                  <button
+                    onClick={handleShare}
+                    className="w-full mb-3 py-3 flex items-center justify-center gap-2 rounded-2xl font-bold text-sm uppercase tracking-wider transition-all active:scale-95 border border-white/20 bg-white/5 hover:bg-white/10 text-white/80 hover:text-white"
+                  >
+                    {shareStatus === 'copied' ? (
+                      <>
+                        <CheckCircle className="w-4 h-4 text-green-400" />
+                        {t.shareCopied}
+                      </>
+                    ) : (
+                      <>
+                        <Share2 className="w-4 h-4" />
+                        {t.share}
+                      </>
+                    )}
+                  </button>
                 )}
 
                 {/* Action buttons */}

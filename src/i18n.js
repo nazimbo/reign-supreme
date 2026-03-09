@@ -29,6 +29,9 @@ export const translations = {
     backToMenu: 'Menu',
     continue: 'Continue',
     showFunFacts: 'Fun Facts',
+    share: 'Challenge a Friend',
+    shareCopied: 'Link Copied!',
+    shareText: (score) => `I scored ${score} in Reign Supreme 👑 — the history trivia game. Can you beat me?`,
   },
   fr: {
     score: 'Score',
@@ -60,5 +63,8 @@ export const translations = {
     backToMenu: 'Menu',
     continue: 'Continuer',
     showFunFacts: 'Fun Facts',
+    share: 'Défier un ami',
+    shareCopied: 'Lien copié\u00a0!',
+    shareText: (score) => `J'ai scoré ${score} dans Reign Supreme 👑 — le jeu de culture historique. Fais mieux si tu peux\u00a0!`,
   },
 };
