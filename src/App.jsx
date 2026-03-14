@@ -514,10 +514,10 @@ export default function App() {
 
               {gameState === 'correct' && showFunFacts && rightLeader.factEn && (
                 <div className="hidden md:block fact-reveal glass-panel mt-4 px-5 py-4 rounded-xl max-w-sm w-full">
-                  <p className="text-xs text-yellow-400 uppercase tracking-widest font-bold mb-1">
+                  <p className="text-sm text-yellow-400 uppercase tracking-widest font-bold mb-1.5">
                     {t.funFact}
                   </p>
-                  <p className="text-sm text-white/90 leading-relaxed text-left">
+                  <p className="text-base text-white/90 leading-relaxed text-left">
                     {language === 'fr' ? rightLeader.factFr : rightLeader.factEn}
                   </p>
                 </div>
@@ -543,8 +543,8 @@ export default function App() {
           {gameState === 'correct' && showFunFacts && rightLeader.factEn && (
             <div className="md:hidden fact-reveal absolute bottom-0 left-0 right-0 z-40 p-3 pb-5 flex flex-col gap-2 bg-gradient-to-t from-black/80 to-transparent">
               <div className="glass-panel px-4 py-3 rounded-xl w-full">
-                <p className="text-[9px] text-yellow-400 uppercase tracking-widest font-bold mb-1">{t.funFact}</p>
-                <p className="text-xs text-white/90 leading-relaxed text-left">
+                <p className="text-xs text-yellow-400 uppercase tracking-widest font-bold mb-1">{t.funFact}</p>
+                <p className="text-sm text-white/90 leading-relaxed text-left">
                   {language === 'fr' ? rightLeader.factFr : rightLeader.factEn}
                 </p>
               </div>
@@ -581,10 +581,10 @@ export default function App() {
 
                 {rightLeader.factEn && (
                   <div className="glass-panel w-full rounded-xl p-3 md:p-4 mb-4 border border-yellow-400/20 fact-reveal">
-                    <p className="text-[9px] md:text-xs text-yellow-400 uppercase tracking-widest font-bold mb-1">
+                    <p className="text-xs md:text-sm text-yellow-400 uppercase tracking-widest font-bold mb-1.5">
                       {t.funFact}
                     </p>
-                    <p className="text-xs md:text-sm text-white/80 leading-relaxed text-left">
+                    <p className="text-sm md:text-base text-white/80 leading-relaxed text-left">
                       {language === 'fr' ? rightLeader.factFr : rightLeader.factEn}
                     </p>
                   </div>
