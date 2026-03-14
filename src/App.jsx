@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Trophy, ChevronUp, ChevronDown, XCircle, RotateCcw, CheckCircle, Medal, Share2 } from 'lucide-react';
+import { Trophy, ChevronUp, ChevronDown, ChevronRight, XCircle, RotateCcw, CheckCircle, Medal, Share2 } from 'lucide-react';
 import initialLeadersData from './leaders.json';
 import { translations } from './i18n';
 import { supabase } from './supabase';
@@ -561,51 +561,51 @@ export default function App() {
           {/* Game over screen */}
           {gameState === 'gameover' && (
             <div className="absolute inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-md p-4 animate-in fade-in duration-300">
-              <div className="bg-slate-900 border border-slate-700 p-6 md:p-10 rounded-[2rem] flex flex-col items-center text-center max-w-lg w-full shadow-2xl animate-in zoom-in-95 duration-500 mt-10 md:mt-0 overflow-y-auto max-h-[90dvh]">
+              <div className="bg-slate-900 border border-slate-700 p-5 md:p-10 rounded-[2rem] flex flex-col items-center text-center max-w-lg w-full shadow-2xl animate-in zoom-in-95 duration-500 overflow-y-auto max-h-[90dvh]">
 
-                <div className="relative w-16 h-16 md:w-20 md:h-20 mb-4 shrink-0">
-                  <div className="absolute inset-0 bg-red-500/20 rounded-full animate-ping opacity-75"></div>
-                  <div className="relative bg-red-500/30 w-full h-full rounded-full flex items-center justify-center border-2 border-red-500/50">
-                    <XCircle className="w-10 h-10 md:w-12 md:h-12 text-red-400" />
-                  </div>
-                </div>
+                {/* Header — compact */}
+                <p className="text-xs md:text-sm text-red-400 uppercase tracking-[0.2em] font-bold mb-1">{t.gameOver}</p>
 
-                <h2 className="text-3xl md:text-4xl font-black text-white mb-3 uppercase tracking-wider">{t.gameOver}</h2>
-
-                <p className="text-slate-300 text-sm md:text-base mb-4 leading-relaxed">
-                  {language === 'fr'
-                    ? <><span className="font-bold text-white">{rightLeader.name}</span> a régné{' '}<span className="font-bold text-yellow-400">{rightLeader.years} ans</span>, contre{' '}<span className="font-bold text-yellow-400">{leftLeader.years} ans</span>{' '}pour{' '}<span className="font-bold text-white">{leftLeader.name}</span>.</>
-                    : <><span className="font-bold text-white">{rightLeader.name}</span> ruled for{' '}<span className="font-bold text-yellow-400">{rightLeader.years} years</span>, compared to{' '}<span className="font-bold text-yellow-400">{leftLeader.years} years</span>{' '}for{' '}<span className="font-bold text-white">{leftLeader.name}</span>.</>
-                  }
-                </p>
-
-                {rightLeader.factEn && (
-                  <div className="glass-panel w-full rounded-xl p-3 md:p-4 mb-4 border border-yellow-400/20 fact-reveal max-h-[25vh] md:max-h-none overflow-y-auto">
-                    <p className="text-xs md:text-sm text-yellow-400 uppercase tracking-widest font-bold mb-1.5 sticky top-0">
-                      {t.funFact}
-                    </p>
-                    <p className="text-sm md:text-base text-white/80 leading-relaxed text-left">
-                      {language === 'fr' ? rightLeader.factFr : rightLeader.factEn}
-                    </p>
-                  </div>
+                {/* Score — hero */}
+                <p className="text-6xl md:text-7xl font-black text-white leading-none">{score}</p>
+                <p className="text-[10px] md:text-xs text-slate-400 uppercase tracking-widest font-bold mt-1 mb-1">{t.yourScore}</p>
+                {highScore > 0 && (
+                  <p className="text-xs text-yellow-400/70 font-semibold mb-4">
+                    {t.highScore}: <span className="text-yellow-400 font-black">{highScore}</span>
+                  </p>
                 )}
 
-                {/* Score display */}
-                <div className="glass-panel w-full rounded-2xl p-4 mb-4 flex justify-around relative overflow-hidden bg-black/40">
-                  <div className="relative z-10">
-                    <p className="text-[10px] md:text-xs text-slate-400 uppercase tracking-widest mb-1 font-bold">{t.yourScore}</p>
-                    <p className="text-4xl md:text-5xl font-black text-white">{score}</p>
+                {/* Comparison — compact side by side */}
+                <div className="w-full glass-panel rounded-xl p-3 mb-3 flex items-center gap-2 bg-black/40">
+                  <div className="flex-1 text-right">
+                    <p className="text-xs md:text-sm font-bold text-white truncate">{rightLeader.name}</p>
+                    <p className="text-lg md:text-xl font-black text-yellow-400">{rightLeader.years}<span className="text-xs text-yellow-400/60 ml-0.5">{language === 'fr' ? 'ans' : 'yrs'}</span></p>
                   </div>
-                  <div className="w-px bg-white/10 relative z-10"></div>
-                  <div className="relative z-10">
-                    <p className="text-[10px] md:text-xs text-yellow-400/80 uppercase tracking-widest mb-1 font-bold">{t.highScore}</p>
-                    <p className="text-4xl md:text-5xl font-black text-yellow-400">{highScore}</p>
+                  <div className="text-xs text-slate-500 font-bold uppercase">vs</div>
+                  <div className="flex-1 text-left">
+                    <p className="text-xs md:text-sm font-bold text-white truncate">{leftLeader.name}</p>
+                    <p className="text-lg md:text-xl font-black text-slate-300">{leftLeader.years}<span className="text-xs text-slate-500 ml-0.5">{language === 'fr' ? 'ans' : 'yrs'}</span></p>
                   </div>
                 </div>
+
+                {/* Fun fact — collapsible */}
+                {rightLeader.factEn && (
+                  <details className="w-full mb-3 group">
+                    <summary className="flex items-center gap-1.5 cursor-pointer text-xs text-yellow-400 uppercase tracking-widest font-bold py-1.5 select-none list-none">
+                      <ChevronRight className="w-3.5 h-3.5 transition-transform group-open:rotate-90" />
+                      {t.funFact}
+                    </summary>
+                    <div className="glass-panel rounded-xl p-3 mt-1.5 border border-yellow-400/20 fact-reveal">
+                      <p className="text-sm text-white/80 leading-relaxed text-left">
+                        {language === 'fr' ? rightLeader.factFr : rightLeader.factEn}
+                      </p>
+                    </div>
+                  </details>
+                )}
 
                 {/* Score submission — only when score > 0 */}
                 {score > 0 && (
-                  <div className="w-full mb-4">
+                  <div className="w-full mb-3">
                     {submitStatus === 'idle' && (
                       <div className="flex flex-col gap-1.5">
                         <div className="flex gap-2">
@@ -616,12 +616,12 @@ export default function App() {
                             value={nameInput}
                             onChange={e => setNameInput(e.target.value)}
                             onKeyDown={e => e.key === 'Enter' && handleSubmitScore()}
-                            className={`flex-1 bg-white/10 border rounded-xl px-4 py-3 text-white placeholder-white/30 text-sm font-medium focus:outline-none focus:border-white/50 transition-colors ${nameInput.length > 0 && !nameInput.trim() ? 'border-red-500/60' : 'border-white/20'}`}
+                            className={`flex-1 bg-white/10 border rounded-xl px-4 py-2.5 text-white placeholder-white/30 text-sm font-medium focus:outline-none focus:border-white/50 transition-colors ${nameInput.length > 0 && !nameInput.trim() ? 'border-red-500/60' : 'border-white/20'}`}
                           />
                           <button
                             onClick={handleSubmitScore}
                             disabled={!nameInput.trim()}
-                            className="px-5 py-3 bg-yellow-400 text-black rounded-xl font-black text-sm uppercase tracking-wider hover:bg-yellow-300 transition-all active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed"
+                            className="px-5 py-2.5 bg-yellow-400 text-black rounded-xl font-black text-sm uppercase tracking-wider hover:bg-yellow-300 transition-all active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed"
                           >
                             {t.submitScore}
                           </button>
@@ -640,44 +640,44 @@ export default function App() {
                   </div>
                 )}
 
-                {/* Share button — only when score > 0 */}
-                {score > 0 && (
-                  <button
-                    onClick={handleShare}
-                    className="w-full mb-3 py-3 flex items-center justify-center gap-2 rounded-2xl font-bold text-sm uppercase tracking-wider transition-all active:scale-95 border border-white/20 bg-white/5 hover:bg-white/10 text-white/80 hover:text-white"
-                  >
-                    {shareStatus === 'copied' ? (
-                      <>
-                        <CheckCircle className="w-4 h-4 text-green-400" />
-                        {t.shareCopied}
-                      </>
-                    ) : (
-                      <>
-                        <Share2 className="w-4 h-4" />
-                        {t.share}
-                      </>
-                    )}
-                  </button>
-                )}
-
                 {/* Action buttons */}
-                <div className="flex gap-3 w-full">
+                <div className="flex gap-3 w-full mb-2">
                   <button
                     onClick={initGame}
-                    className="group flex-1 py-3.5 bg-white text-black rounded-2xl font-black text-base uppercase tracking-wider hover:bg-slate-200 transition-all active:scale-95 flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(255,255,255,0.2)]"
+                    className="group flex-1 py-3 bg-white text-black rounded-2xl font-black text-sm uppercase tracking-wider hover:bg-slate-200 transition-all active:scale-95 flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(255,255,255,0.2)]"
                   >
-                    <RotateCcw className="w-5 h-5 group-hover:-rotate-180 transition-transform duration-500" />
+                    <RotateCcw className="w-4 h-4 group-hover:-rotate-180 transition-transform duration-500" />
                     {t.playAgain}
                   </button>
 
                   <button
                     onClick={openLeaderboard}
-                    className="flex-1 py-3.5 glass-panel text-white/70 rounded-2xl font-bold text-base uppercase tracking-wider hover:text-white hover:bg-white/10 transition-all active:scale-95 flex items-center justify-center gap-2"
+                    className="flex-1 py-3 glass-panel text-white/70 rounded-2xl font-bold text-sm uppercase tracking-wider hover:text-white hover:bg-white/10 transition-all active:scale-95 flex items-center justify-center gap-2"
                   >
-                    <Medal className="w-5 h-5 text-yellow-400" />
+                    <Medal className="w-4 h-4 text-yellow-400" />
                     {t.leaderboard}
                   </button>
                 </div>
+
+                {/* Share button — only when score > 0 */}
+                {score > 0 && (
+                  <button
+                    onClick={handleShare}
+                    className="w-full py-2.5 flex items-center justify-center gap-2 rounded-2xl font-bold text-xs uppercase tracking-wider transition-all active:scale-95 text-white/40 hover:text-white/70"
+                  >
+                    {shareStatus === 'copied' ? (
+                      <>
+                        <CheckCircle className="w-3.5 h-3.5 text-green-400" />
+                        {t.shareCopied}
+                      </>
+                    ) : (
+                      <>
+                        <Share2 className="w-3.5 h-3.5" />
+                        {t.share}
+                      </>
+                    )}
+                  </button>
+                )}
 
               </div>
             </div>
