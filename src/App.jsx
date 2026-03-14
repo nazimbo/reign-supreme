@@ -580,8 +580,8 @@ export default function App() {
                 </p>
 
                 {rightLeader.factEn && (
-                  <div className="glass-panel w-full rounded-xl p-3 md:p-4 mb-4 border border-yellow-400/20 fact-reveal">
-                    <p className="text-xs md:text-sm text-yellow-400 uppercase tracking-widest font-bold mb-1.5">
+                  <div className="glass-panel w-full rounded-xl p-3 md:p-4 mb-4 border border-yellow-400/20 fact-reveal max-h-[25vh] md:max-h-none overflow-y-auto">
+                    <p className="text-xs md:text-sm text-yellow-400 uppercase tracking-widest font-bold mb-1.5 sticky top-0">
                       {t.funFact}
                     </p>
                     <p className="text-sm md:text-base text-white/80 leading-relaxed text-left">
