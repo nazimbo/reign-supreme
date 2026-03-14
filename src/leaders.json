@@ -898,5 +898,14 @@
     "photo": "/leaders/100.jpg",
     "factEn": "He was a West Point graduate and the only Philippine president to have served in both the Korean and Vietnam Wars.",
     "factFr": "Diplômé de West Point, il fut le seul président philippin à avoir servi à la fois dans les guerres de Corée et du Vietnam."
+  },
+  {
+    "id": 101,
+    "name": "Mohammad Reza Pahlavi",
+    "country": "Iran",
+    "years": 38,
+    "photo": "/leaders/101.jpg",
+    "factEn": "He threw the most expensive party in history — a $200 million celebration at Persepolis in 1971 to mark 2,500 years of the Persian Empire, with guests flown in from around the world.",
+    "factFr": "Il organisa la fête la plus chère de l'histoire — une célébration à 200 millions de dollars à Persépolis en 1971 pour marquer les 2 500 ans de l'Empire perse, avec des invités venus du monde entier."
   }
 ]
