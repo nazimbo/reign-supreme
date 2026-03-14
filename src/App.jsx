@@ -59,6 +59,7 @@ export default function App() {
 
   const [score, setScore] = useState(0);
   const [highScore, setHighScore] = useState(() => Number(localStorage.getItem('rs_highscore')) || 0);
+  const [roundResults, setRoundResults] = useState([]); // ['correct', 'correct', 'wrong']
   const [leftLeader, setLeftLeader] = useState(null);
   const [rightLeader, setRightLeader] = useState(null);
   const [playedIds, setPlayedIds] = useState([]);
@@ -99,13 +100,18 @@ export default function App() {
     }
   };
 
-  const handleShare = async () => {
-    const text = t.shareText(score);
+  const buildShareText = () => {
+    const grid = roundResults.map(r => r === 'correct' ? '👑' : '💀').join('');
     const url = window.location.href;
+    return `Reign Supreme 👑\n${t.score} : ${score}\n${grid}\n\n${url}`;
+  };
+
+  const handleShare = async () => {
+    const text = buildShareText();
     if (navigator.share) {
-      try { await navigator.share({ text, url }); } catch (_) {}
+      try { await navigator.share({ text }); } catch (_) {}
     } else {
-      await navigator.clipboard.writeText(`${text}\n${url}`);
+      await navigator.clipboard.writeText(text);
       setShareStatus('copied');
       setTimeout(() => setShareStatus('idle'), 2500);
     }
@@ -134,6 +140,7 @@ export default function App() {
     setRightLeader(second);
     setPlayedIds([first.id, second.id]);
     setScore(0);
+    setRoundResults([]);
     setGameState('playing');
     setFlashColor(null);
     setSubmitStatus('idle');
@@ -162,6 +169,7 @@ export default function App() {
         setGameState('correct');
         setFlashColor('bg-green-500/30');
         setScore(s => s + 1);
+        setRoundResults(prev => [...prev, 'correct']);
         if (!showFunFacts || !rightLeader.factEn) {
           setTimeout(() => advanceRound(), 1200);
         }
@@ -169,6 +177,7 @@ export default function App() {
       } else {
         setGameState('gameover');
         setFlashColor('bg-red-500/40');
+        setRoundResults(prev => [...prev, 'wrong']);
         if (score > highScore) {
           setHighScore(score);
           localStorage.setItem('rs_highscore', score);
