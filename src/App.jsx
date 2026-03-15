@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Trophy, ChevronUp, ChevronDown, ChevronRight, XCircle, RotateCcw, CheckCircle, Medal, Share2 } from 'lucide-react';
+import { Trophy, ChevronUp, ChevronDown, XCircle, RotateCcw, CheckCircle, Medal, Share2 } from 'lucide-react';
 import initialLeadersData from './leaders.json';
 import { translations } from './i18n';
 import { supabase } from './supabase';
@@ -588,19 +588,16 @@ export default function App() {
                   </div>
                 </div>
 
-                {/* Fun fact — collapsible */}
+                {/* Fun fact */}
                 {rightLeader.factEn && (
-                  <details className="w-full mb-3 group">
-                    <summary className="flex items-center gap-1.5 cursor-pointer text-xs text-yellow-400 uppercase tracking-widest font-bold py-1.5 select-none list-none">
-                      <ChevronRight className="w-3.5 h-3.5 transition-transform group-open:rotate-90" />
-                      {t.funFact}
-                    </summary>
-                    <div className="glass-panel rounded-xl p-3 mt-1.5 border border-yellow-400/20 fact-reveal">
+                  <div className="w-full mb-3">
+                    <p className="text-xs text-yellow-400 uppercase tracking-widest font-bold mb-1.5">{t.funFact}</p>
+                    <div className="glass-panel rounded-xl p-3 border border-yellow-400/20">
                       <p className="text-sm text-white/80 leading-relaxed text-left">
                         {language === 'fr' ? rightLeader.factFr : rightLeader.factEn}
                       </p>
                     </div>
-                  </details>
+                  </div>
                 )}
 
                 {/* Score submission — only when score > 0 */}
