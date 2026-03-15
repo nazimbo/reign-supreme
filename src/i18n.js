@@ -32,6 +32,7 @@ export const translations = {
     share: 'Challenge a Friend',
     shareCopied: 'Link Copied!',
     shareText: (score) => `I scored ${score} in Reign Supreme 👑 — the history trivia game. Can you beat me?`,
+    challengeBanner: (score) => `Can you beat a score of ${score}?`,
   },
   fr: {
     score: 'Score',
@@ -66,5 +67,6 @@ export const translations = {
     share: 'Défier un ami',
     shareCopied: 'Lien copié\u00a0!',
     shareText: (score) => `J'ai scoré ${score} dans Reign Supreme 👑 — le jeu de culture historique. Fais mieux si tu peux\u00a0!`,
+    challengeBanner: (score) => `Peux-tu battre un score de ${score}\u00a0?`,
   },
 };

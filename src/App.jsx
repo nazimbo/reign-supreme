@@ -4,6 +4,16 @@ import initialLeadersData from './leaders.json';
 import { translations } from './i18n';
 import { supabase } from './supabase';
 
+const badges = [
+  { min: 15, en: 'Supreme Sovereign', fr: 'Souverain Suprême', emoji: '👑' },
+  { min: 10, en: 'Emperor', fr: 'Empereur', emoji: '🏛️' },
+  { min: 6, en: 'King', fr: 'Roi', emoji: '🤴' },
+  { min: 3, en: 'Duke', fr: 'Duc', emoji: '🎖️' },
+  { min: 0, en: 'Vassal', fr: 'Vassal', emoji: '⚔️' },
+];
+
+const getBadge = (score) => badges.find(b => score >= b.min);
+
 const gradients = [
   "from-blue-600 to-indigo-900",
   "from-emerald-600 to-teal-900",
@@ -57,6 +67,12 @@ export default function App() {
   };
   const t = translations[language];
 
+  const [challengeScore] = useState(() => {
+    const params = new URLSearchParams(window.location.search);
+    const c = parseInt(params.get('challenge'), 10);
+    return c > 0 ? c : null;
+  });
+
   const [score, setScore] = useState(0);
   const [highScore, setHighScore] = useState(() => Number(localStorage.getItem('rs_highscore')) || 0);
   const [roundResults, setRoundResults] = useState([]); // ['correct', 'correct', 'wrong']
@@ -102,8 +118,11 @@ export default function App() {
 
   const buildShareText = () => {
     const grid = roundResults.map(r => r === 'correct' ? '👑' : '💀').join('');
-    const url = window.location.href;
-    return `Reign Supreme 👑\n${t.score} : ${score}\n${grid}\n\n${url}`;
+    const badge = getBadge(score);
+    const badgeLabel = language === 'fr' ? badge.fr : badge.en;
+    const baseUrl = window.location.origin + window.location.pathname;
+    const url = score > 0 ? `${baseUrl}?challenge=${score}` : baseUrl;
+    return `Reign Supreme 👑\n${badge.emoji} ${badgeLabel}\n${t.score} : ${score}\n${grid}\n\n${url}`;
   };
 
   const handleShare = async () => {
@@ -249,6 +268,12 @@ export default function App() {
               <p className="text-lg md:text-2xl text-yellow-400 font-semibold mb-5 md:mb-8 drop-shadow-md">
                 {t.menuSubtitle}
               </p>
+
+              {challengeScore && (
+                <div className="w-full max-w-xs mb-4 md:mb-6 px-5 py-3 rounded-2xl bg-yellow-400/15 border border-yellow-400/30 text-center">
+                  <p className="text-yellow-400 font-black text-lg md:text-xl">{t.challengeBanner(challengeScore)}</p>
+                </div>
+              )}
 
               <div className="glass-panel rounded-2xl px-6 py-4 md:py-5 mb-5 md:mb-8 w-full">
                 <p className="text-slate-300 text-sm md:text-base leading-relaxed md:hidden">
@@ -569,6 +594,17 @@ export default function App() {
                 {/* Score — hero */}
                 <p className="text-6xl md:text-7xl font-black text-white leading-none">{score}</p>
                 <p className="text-[10px] md:text-xs text-slate-400 uppercase tracking-widest font-bold mt-1 mb-1">{t.yourScore}</p>
+
+                {/* Badge */}
+                {(() => {
+                  const badge = getBadge(score);
+                  return (
+                    <p className="text-sm md:text-base font-bold text-yellow-400 mb-1">
+                      {badge.emoji} {language === 'fr' ? badge.fr : badge.en}
+                    </p>
+                  );
+                })()}
+
                 {highScore > 0 && (
                   <p className="text-xs text-yellow-400/70 font-semibold mb-4">
                     {t.highScore}: <span className="text-yellow-400 font-black">{highScore}</span>
